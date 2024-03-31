@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .form-container {
+    width: 400px;
+    margin-right: 20px;
+  }
+  
+  .info-container {
+    width: 400px;
+  }
+  
+  .info-container p {
+    font-size: 14px;
+  }
+  
