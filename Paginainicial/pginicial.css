@@ -34,21 +34,27 @@ nav ul li a {
     color: #333;
 }
 
-main {
-    padding: 20px;
+.search-bar input[type="text"] {
+    padding: 8px;
+    width: 300px;
 }
 
-h2 {
-    color: #333;
+.search-bar button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+.user-actions button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
 }
-
 nav{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -123,4 +129,4 @@ ul li a:before{
     ul li a:hover:after{
         transform: scaleY(1);
         opacity: 1;
-    }
+    } 
