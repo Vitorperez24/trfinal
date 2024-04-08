@@ -48,3 +48,26 @@ footer {
     padding: 20px;
     text-align: center;
 }
+
+nav{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: sang-serif;
+    background-color:#EAF4F4;
+}
+ul{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate (-50%, -50%);
+    display:flex;
+
+}
+ul li{
+    list-style: none;
+}
