@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinição de Senha</title>
+    <link rel="stylesheet" href="exe.css">
+</head>
+<body>
+    <div class="top-bar"></div> <!-- Barra Superior -->
+    <div class="container">
+        <div class="box-wrapper">
+            <h2>Redefinição de Senha</h2>
+            <p>Preencha os dados para solicitar a recuperação de senha. Você irá receber um e-mail para recuperação de senha.</p>
+            <form action="recuperar_senha.php" method="POST">
+                <label for="email">Digite seu e-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                <input type="submit" value="Recuperar">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
