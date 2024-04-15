@@ -21,21 +21,20 @@
 header {
   background-color: #EAF4F4;
   display: flex;
-  justify-content: space-between; /* Para alinhar os elementos no cabeçalho */
-  align-items: center; /* Para centralizar verticalmente */
-  padding: 10px; /* Adicionando algum espaço interno */
+  justify-content: flex-end; /* Alinha os elementos à direita */
+  align-items: center; /* Centraliza verticalmente */
+  padding: 10px; /* Adiciona espaço interno */
 }
 
-h3 {
+span {
   margin-right: 20px; /* Espaçamento à direita */
 }
 
-img {
-  max-width: 100px; /* Definindo uma largura máxima para a imagem */
-  height: auto; /* Para manter a proporção da imagem */
+.logo {
+  max-width: 100px; /* Define uma largura máxima para a imagem */
+  height: auto; /* Mantém a proporção da imagem */
 }
- .ambiente{
-  max-width: 100px; /* Definindo uma largura máxima para a imagem */
-  height: auto; /* Para manter a proporção da imagem */
 
- }
+.logo {
+  margin-right: auto; /* Move a logo para a esquerda */
+}
