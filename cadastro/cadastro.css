@@ -1,20 +1,41 @@
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .form-container {
-    width: 400px;
-    margin-right: 20px;
-  }
-  
-  .info-container {
-    width: 400px;
-  }
-  
-  .info-container p {
-    font-size: 14px;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.form-container {
+  width: 400px;
+  margin-right: 20px;
+}
+
+.info-container {
+  width: 400px;
+}
+
+.info-container p {
+  font-size: 14px;
+}
+
+header {
+  background-color: #EAF4F4;
+  display: flex;
+  justify-content: space-between; /* Para alinhar os elementos no cabeçalho */
+  align-items: center; /* Para centralizar verticalmente */
+  padding: 10px; /* Adicionando algum espaço interno */
+}
+
+h3 {
+  margin-right: 20px; /* Espaçamento à direita */
+}
+
+img {
+  max-width: 100px; /* Definindo uma largura máxima para a imagem */
+  height: auto; /* Para manter a proporção da imagem */
+}
+ .ambiente{
+  max-width: 100px; /* Definindo uma largura máxima para a imagem */
+  height: auto; /* Para manter a proporção da imagem */
+
+ }
