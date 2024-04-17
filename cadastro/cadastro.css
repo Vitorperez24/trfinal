@@ -3,11 +3,25 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 100px;
+  
 }
 
 .form-container {
   width: 400px;
   margin-right: 20px;
+  padding: 20px; /* Adiciona um espaço interno para separar o conteúdo do formulário da borda */
+  border: 2px solid #EAF4F4; /* Adiciona uma borda sólida de 2px com a cor cinza */
+  background-color: #EAF4F4; /* Define uma cor de fundo para o formulário */
+  border-radius: 20px;
+  line-height: 2.0;
+}
+.form-container label {
+  color: #6B9080; /* Define a cor do texto das labels para azul */
+}
+
+.form-container input {
+  color: #6B9080; /* Define a cor do texto dos inputs para vermelho */
 }
 
 .info-container {
@@ -28,13 +42,42 @@ header {
 
 span {
   margin-right: 20px; /* Espaçamento à direita */
+  color: #6B9080;
 }
 
+.logo-container {
+  display: inline-block;
+}
+
+.ambiente-container {
+  display: inline-block;
+  margin-left: auto; /* Empurra a imagem ambiente para a direita */
+  max-width: 80px; /* Define uma largura máxima para a imagem */
+  height: 90px;
+}
 .logo {
-  max-width: 100px; /* Define uma largura máxima para a imagem */
+  max-width: 120px; /* Define uma largura máxima para a imagem */
   height: auto; /* Mantém a proporção da imagem */
 }
 
-.logo {
-  margin-right: auto; /* Move a logo para a esquerda */
+.form-container{
+  background-size: cover;
+  border: 2px;
+}
+
+.botao{
+  position: center;
+  color: black;
+  background-color: #ADE1CA;
+}
+.form-container input {
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 2px solid #fff; 
+}
+.formulario label {
+  position: absolute; /* Define o posicionamento absoluto para as labels */
+  top: 0; /* Alinha as labels no topo do elemento pai */
+  left: 0; /* Alinha as labels no canto esquerdo do elemento pai */
+  padding: 5px; /* Adiciona algum espaçamento interno para as labels */
 }
