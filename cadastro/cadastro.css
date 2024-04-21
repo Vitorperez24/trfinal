@@ -4,24 +4,43 @@
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 100px;
-  
 }
 
 .form-container {
   width: 400px;
   margin-right: 20px;
-  padding: 20px; /* Adiciona um espaço interno para separar o conteúdo do formulário da borda */
-  border: 2px solid #EAF4F4; /* Adiciona uma borda sólida de 2px com a cor cinza */
-  background-color: #EAF4F4; /* Define uma cor de fundo para o formulário */
+  padding: 20px;
+  border: 2px solid #EAF4F4;
+  background-color: #EAF4F4;
   border-radius: 20px;
   line-height: 2.0;
+  position: relative; /* Adiciona posição relativa para os spans */
 }
+
 .form-container label {
-  color: #6B9080; /* Define a cor do texto das labels para azul */
+  color: #6B9080;
 }
 
 .form-container input {
-  color: #6B9080; /* Define a cor do texto dos inputs para vermelho */
+  color: #6B9080;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  width: calc(100% - 10px); /* Ajusta a largura dos inputs para acomodar os spans */
+  margin-bottom: 10px; /* Adiciona um espaçamento entre os campos */
+}
+
+.form-container input:focus {
+  border-color: #ADE1CA; /* Muda a cor da borda quando o input está em foco */
+}
+
+/* Estilo para os spans de mensagens de erro */
+.form-container span.mensagem {
+  position: absolute;
+  bottom: -20px; /* Posiciona os spans abaixo dos inputs */
+  left: 0;
+  color: #FF6347; /* Cor vermelha para mensagens de erro */
+  font-size: 12px; /* Tamanho da fonte menor para mensagens de erro */
 }
 
 .info-container {
@@ -35,13 +54,14 @@
 header {
   background-color: #EAF4F4;
   display: flex;
-  justify-content: flex-end; /* Alinha os elementos à direita */
-  align-items: center; /* Centraliza verticalmente */
-  padding: 10px; /* Adiciona espaço interno */
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  width: 100%; /* Define o cabeçalho para ocupar 100% da largura da página */
 }
 
 span {
-  margin-right: 20px; /* Espaçamento à direita */
+  margin-right: 20px;
   color: #6B9080;
 }
 
@@ -51,33 +71,22 @@ span {
 
 .ambiente-container {
   display: inline-block;
-  margin-left: auto; /* Empurra a imagem ambiente para a direita */
-  max-width: 80px; /* Define uma largura máxima para a imagem */
+  margin-left: auto;
+  max-width: 80px;
   height: 90px;
 }
+
 .logo {
-  max-width: 120px; /* Define uma largura máxima para a imagem */
-  height: auto; /* Mantém a proporção da imagem */
+  max-width: 120px;
+  height: auto;
 }
 
-.form-container{
-  background-size: cover;
-  border: 2px;
-}
-
-.botao{
-  position: center;
+.botao {
   color: black;
   background-color: #ADE1CA;
-}
-.form-container input {
+  width: 100%; /* Ajusta a largura do botão para preencher o contêiner */
   border-radius: 5px;
-  box-sizing: border-box;
-  border: 2px solid #fff; 
-}
-.formulario label {
-  position: absolute; /* Define o posicionamento absoluto para as labels */
-  top: 0; /* Alinha as labels no topo do elemento pai */
-  left: 0; /* Alinha as labels no canto esquerdo do elemento pai */
-  padding: 5px; /* Adiciona algum espaçamento interno para as labels */
+  padding: 10px; /* Adiciona espaço interno ao botão */
+  cursor: pointer; /* Adiciona cursor de apontar */
+  margin-top: 10px; /* Adiciona espaço entre o botão e os inputs */
 }
