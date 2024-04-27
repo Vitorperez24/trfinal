@@ -57,8 +57,12 @@ header {
   justify-content: flex-end;
   align-items: center;
   padding: 10px;
-  width: 100%; /* Define o cabeçalho para ocupar 100% da largura da página */
+  width: 100%;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
 }
+
+
 
 span {
   margin-right: 20px;

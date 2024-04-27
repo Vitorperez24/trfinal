@@ -73,6 +73,25 @@ input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
+header {
+    background-color: #EAF4F4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+  .logo-container {
+    display: inline-block;
+  }
+  .ambiente-container {
+    display: inline-block;
+    margin-left: auto;
+    max-width: 80px;
+    height: 90px;
+  }  
 
 
 
