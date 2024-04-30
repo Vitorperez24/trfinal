@@ -44,10 +44,16 @@ nav ul li a {
 .pesquisa {
     display: flex;
     align-items: center;
+    margin-left: 400px; /* Move a caixa de pesquisa para o meio */
+    margin-right: auto; /* Move a caixa de pesquisa para o meio */
+    width: 50%; /* Define a largura da caixa de pesquisa */
 }
+
 
 .pesquisa input[type="text"] {
     padding: 8px;
+    border-radius: 5px;
+
 }
 
 .pesquisa button {
@@ -74,10 +80,11 @@ nav ul li a {
 }
 
 .menu {
-    margin-top: 20px; /* Adiciona margem superior para separar da barra de pesquisa */
+    margin-top: -150px; /* Reduza o valor negativo para ajustar conforme desejado */
     display: flex;
     justify-content: center; /* Centraliza os itens */
 }
+
 nav {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -103,13 +110,13 @@ ul li a {
     display: block;
     text-transform: uppercase;
     margin: 20px 0;
-    padding: 10px 20px;
+    padding: 10px 50px;
     text-decoration: none;
     color: #6B9080;
     font-family: sans-serif;
-    font-size: 18px;
+    font-size: 13px;
     font-weight: 600;
-    transition: 0.5s; /* Corrigido "," para "." */
+    transition: 0.5s;
     z-index: 1;
 }
 
@@ -122,7 +129,7 @@ ul li a:before {
     height: 100%;
     border-top: 2px solid #6B9080;
     border-bottom: 2px solid #6B9080;
-    transform: scaleY(2); /* Corrigido "transform scaleY(2);" para "transform: scaleY(2);" */
+    transform: scaleY(2);
     opacity: 0;
     transition: 0.3s;
 }
@@ -137,7 +144,7 @@ ul li a:after {
     background-color: #6B9080;
     transform: scale(0);
     opacity: 0;
-    transition: 0.3s; /* Corrigido "transition:0.3;" para "transition: 0.3s;" */
+    transition: 0.3s;
     z-index: -1;
 }
 
@@ -154,13 +161,14 @@ ul li a:hover:after {
     transform: scaleY(1);
     opacity: 1;
 }
+
 .fundo {
     position: fixed;
     bottom: 0;
-    left: 0; /* ou right: 0; se preferir à direita */
+    left: 0;
     width: 100%;
-    background-color: #333;
-    color: #fff;
+    background-color: #EAF4F4;
+    color: black;
     padding: 20px;
     text-align: center;
 }
