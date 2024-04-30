@@ -95,11 +95,11 @@
     margin-top: 10px; /* Adiciona espaço entre o botão e os inputs */     
   }
   .caixa {
-    background-color: #333;
+ 
     border: 1px solid #ccc; /* Define uma borda sólida de 1px com a cor cinza */
-    padding: 20px; /* Adiciona um espaçamento interno de 20 pixels */
+    padding: 15px; /* Adiciona um espaçamento interno de 20 pixels */
     border-radius: 15px; /* Adiciona bordas arredondadas */
-    background-color: #f9f9f9; /* Adiciona uma cor de fundo */
+    background-color: #EAF4F4; /* Adiciona uma cor de fundo */
     max-width: 500px;
     position:center;
     margin: 60px auto;
@@ -110,15 +110,125 @@
 .caixa h2 {
     font-size: 24px; /* Define o tamanho da fonte do título */
     color: #333; /* Define a cor do texto do título */
-    margin-bottom: 10px; /* Adiciona margem inferior para separar do conteúdo abaixo */
+    margin-bottom: 30px; /* Adiciona margem inferior para separar do conteúdo abaixo */
     text-align: center;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .caixa p {
     font-size: 16px; /* Define o tamanho da fonte do parágrafo */
-    color: #666; /* Define a cor do texto do parágrafo */
+    color: black; /* Define a cor do texto do parágrafo */
     line-height: 1.5; /* Define a altura da linha para melhor legibilidade */
     margin-bottom: 20px; /* Adiciona margem inferior para separar parágrafos */
+    text-align: center;
 }
 
+#botao{
+  color: black;
+  background-color: #ADE1CA;
+
+  
+}
+
+.caixa input {
+  border: 2px solid #ADE1CA; /* Adicione uma borda sólida de 2px com a cor #ADE1CA */
+  border-radius: 10px; /* Adicione bordas arredondadas */
+  padding: 5px 10px; /* Adicione um preenchimento interno */
+  display: inline-block; /* Para garantir que a largura do label seja definida pelo seu conteúdo */
+  margin-bottom: 10px; /* Adicione espaço entre os labels */
+}
+
+/* Reset CSS */
+body, html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.buttons {
+  margin-top: 50px;
+  text-align: center;
+}
+
+#botao {
+  position: relative;
+  padding: 10px 30px; /* Diminuindo o padding */
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ADE1CA;
+  font-size: 11px; /* Diminuindo o tamanho da fonte */
+  font-weight: bold;
+  background-color: transparent;
+  outline: none;
+ 
+  transition: color 0.5s;
+  cursor: pointer;
+  border-radius: 10px; /* Diminuindo o border-radius */
+}
+
+#botao:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ADE1CA;
+  border-radius: 20px; /* Ajustando o border-radius */
+}
+
+#botao:after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  transition: all 0.3s 0.2s;
+  border-radius: 20px; /* Ajustando o border-radius */
+}
+
+#botao:hover {
+  color: black;
+}
+
+#botao:hover:after {
+  transition: all 0.3s;
+  left: 0;
+  top: 0;
+}
+
+#botao__inner {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px; /* Ajustando o border-radius */
+  background: #FFFFFF;
+}
+
+#botao__blobs {
+  position: relative;
+  display: block;
+  height: 100%;
+  filter: url('#goo');
+}
+
+#botao__blob {
+  position: absolute;
+  top: 2px;
+  width: 20%; /* Ajustando a largura do blob */
+  height: 100%;
+  background: #ADE1CA;
+  border-radius: 100%;
+  transform: translate3d(0,150%,0) scale(1.7);
+  transition: transform 0.45s;
+}
+
+#botao:hover #botao__blob {
+  transform: translateZ(0) scale(1.7);
+}
