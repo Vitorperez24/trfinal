@@ -21,7 +21,7 @@ header {
 nav {
     width: calc(100% - 100px); /* Reduz a largura do nav para deixar espaço para o menu */
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centraliza o menu horizontalmente */
     align-items: center;
 }
 
@@ -30,6 +30,7 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: space-between; /* Ajusta o espaçamento entre os itens do menu */
 }
 
 nav ul li {
@@ -39,21 +40,49 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #333;
+    position: relative;
+    display: block;
+    text-transform: uppercase;
+    padding: 10px 20px;
+}
+
+nav ul li a:before,
+nav ul li a:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    background-color: #6B9080;
+    transition: transform 0.3s, background-color 0.3s; /* Adiciona transição de cor */
+    transform: scaleX(0);
+}
+
+nav ul li a:after {
+    left: 0;
+    transform-origin: left;
+}
+
+nav ul li a:before {
+    right: 0;
+    transform-origin: right;
+}
+
+nav ul li a:hover:before,
+nav ul li a:hover:after {
+    transform: scaleX(1);
+    background-color: #333; /* Altera a cor ao passar o mouse */
 }
 
 .pesquisa {
     display: flex;
     align-items: center;
-    margin-left: 400px; /* Move a caixa de pesquisa para o meio */
-    margin-right: auto; /* Move a caixa de pesquisa para o meio */
-    width: 50%; /* Define a largura da caixa de pesquisa */
+    margin-left: auto;
 }
-
 
 .pesquisa input[type="text"] {
     padding: 8px;
     border-radius: 5px;
-
 }
 
 .pesquisa button {
@@ -68,6 +97,7 @@ nav ul li a {
 .user-actions {
     display: flex;
     align-items: center;
+    margin-left: auto; /* Move os botões para a direita */
 }
 
 .user-actions button {
@@ -80,86 +110,21 @@ nav ul li a {
 }
 
 .menu {
-    margin-top: -150px; /* Reduza o valor negativo para ajustar conforme desejado */
-    display: flex;
-    justify-content: center; /* Centraliza os itens */
+    margin-top: 20px; /* Ajuste a margem conforme necessário */
 }
 
-nav {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+.imagem-container {
+    display: flex; /* Permite que as imagens sejam exibidas lado a lado */
+    justify-content: center; /* Centraliza as imagens horizontalmente */
+    margin-top: 20px; /* Adiciona margem acima das imagens */
 }
 
-ul {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
+.imgrl, .imgrl2 {
+    width: 50%; /* Define a largura de cada imagem para ocupar metade do contêiner */
 }
 
-ul li {
-    list-style: none;
-}
-
-ul li a {
-    position: relative;
-    display: block;
-    text-transform: uppercase;
-    margin: 20px 0;
-    padding: 10px 50px;
-    text-decoration: none;
-    color: #6B9080;
-    font-family: sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    transition: 0.5s;
-    z-index: 1;
-}
-
-ul li a:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-top: 2px solid #6B9080;
-    border-bottom: 2px solid #6B9080;
-    transform: scaleY(2);
-    opacity: 0;
-    transition: 0.3s;
-}
-
-ul li a:after {
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #6B9080;
-    transform: scale(0);
-    opacity: 0;
-    transition: 0.3s;
-    z-index: -1;
-}
-
-ul li a:hover {
-    color: #333;
-}
-
-ul li a:hover:before {
-    transform: scaleY(1);
-    opacity: 1;
-}
-
-ul li a:hover:after {
-    transform: scaleY(1);
-    opacity: 1;
+.imgrl {
+    margin-right: 10px; /* Adiciona margem entre as imagens */
 }
 
 .fundo {
