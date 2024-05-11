@@ -62,4 +62,119 @@
     max-width: 120px;
     height: auto;
   }
+
+
+.imgdallas {
+    text-align: center; /* Centraliza o conteúdo horizontalmente */
+    margin-top: 20px; /* Adiciona espaço acima da imagem */
+}
+
+.imgdallas img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse o tamanho do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+User
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+  }
   
+  .form-container {
+    width: 400px;
+    margin-right: 20px;
+    padding: 20px;
+    border: 2px solid #EAF4F4;
+    background-color: #EAF4F4;
+    border-radius: 20px;
+    line-height: 2.0;
+    position: relative; /* Adiciona posição relativa para os spans */
+  }
+  
+  .form-container label {
+    color: #6B9080;
+  }
+  
+  .form-container input {
+    color: #6B9080;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    width: calc(100% - 10px); /* Ajusta a largura dos inputs para acomodar os spans */
+    margin-bottom: 10px; /* Adiciona um espaçamento entre os campos */
+  }
+  header {
+    background-color: #EAF4F4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+  
+  
+  
+  span {
+    margin-right: 20px;
+    color: #6B9080;
+  }
+  
+  .logo-container {
+    display: inline-block;
+  }
+  
+  .ambiente-container {
+    display: inline-block;
+    margin-left: auto;
+    max-width: 80px;
+    height: 90px;
+  }
+  
+  .logo {
+    max-width: 120px;
+    height: auto;
+  }
+
+  .texto{
+    font-size: 7px;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 500px;
+  }
+  .texto {
+    font-size: 7px;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    position: relative; /* Adiciona posição relativa ao elemento .texto */
+}
+
+.imgdll {
+    position: absolute; /* Define a posição absoluta */
+    left: 50%; /* Centraliza horizontalmente */
+    bottom: -40px; /* Posiciona a 20 pixels abaixo do .texto */
+    transform: translateX(-50%); /* Corrige o deslocamento para a esquerda */
+}
+
+.imgdll img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse o tamanho do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+}
+.botao {
+    display: block;
+    margin-top: 10px;
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+    padding: 10px 20px;
+    background-color: #ADE1CA;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
