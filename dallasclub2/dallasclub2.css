@@ -188,8 +188,14 @@ User
     padding: 20px; /* Espaçamento interno */
     border: 1px solid #000; /* Borda */
     border-radius: 5px; /* Borda arredondada */
+    opacity: 0; /* Define a opacidade inicial como 0 (oculto) */
+    transition: opacity 0.5s; /* Adiciona uma transição suave na opacidade */
   }
-/* Adicione isso ao seu CSS para adicionar efeitos aos botões */
+  
+  .mensagem.mostrar {
+    opacity: 1; /* Quando a classe "mostrar" é adicionada, a opacidade é definida como 1 (visível) */
+  }
+  
 
 .product button,
 .product2 button,
