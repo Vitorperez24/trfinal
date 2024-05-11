@@ -140,29 +140,47 @@ User
     height: auto;
   }
 
-  .ofertas {
-    display: flex;
-    justify-content: center; /* Centraliza os quadrados na página */
+  .ofertas-container {
+    display: flex; /* Faz os conjuntos de quadrados ficarem em linha */
+    justify-content: center; /* Centraliza os conjuntos de quadrados horizontalmente */
+    flex-wrap: wrap; /* Quebra a linha se necessário */
   }
   
-  .product {
+  .ofertas,
+  .ofertas2,
+  .ofertas3,
+  .ofertas4 {
+    margin: 10px; /* Adiciona espaçamento entre os conjuntos de quadrados */
+  }
+  
+  .product,
+  .product2,
+  .product3,
+  .product4 {
     width: 200px; /* Largura dos quadrados */
     text-align: center;
     border: 1px solid #ccc; /* Adiciona uma borda cinza ao redor dos quadrados */
     padding: 10px; /* Adiciona um espaçamento interno para separar a borda do conteúdo */
-    margin: 0 10px; /* Adiciona um espaçamento horizontal entre os quadrados */
   }
   
-  .product img {
+  .product img,
+  .product2 img,
+  .product3 img,
+  .product4 img {
     width: 100px; /* Tamanho da imagem */
     height: 100px;
   }
   
-  .product button {
+  .product button,
+  .product2 button,
+  .product3 button,
+  .product4 button {
     margin-top: 10px; /* Espaçamento entre a imagem e o botão */
   }
+  
   .mensagem {
-    position: fixed; /* Fixa o elemento na tela */
+    display: none; /* Inicialmente, a mensagem está oculta */
+    position: absolute; /* Posicionamento absoluto */
     top: 50%; /* Centraliza verticalmente */
     left: 50%; /* Centraliza horizontalmente */
     transform: translate(-50%, -50%); /* Move o elemento para o centro */
@@ -171,3 +189,40 @@ User
     border: 1px solid #000; /* Borda */
     border-radius: 5px; /* Borda arredondada */
   }
+/* Adicione isso ao seu CSS para adicionar efeitos aos botões */
+
+.product button,
+.product2 button,
+.product3 button,
+.product4 button {
+  margin-top: 10px; /* Espaçamento entre a imagem e o botão */
+  background-color: #4CAF50; /* Cor de fundo padrão */
+  color: white; /* Cor do texto */
+  border: none; /* Remove a borda */
+  padding: 10px 20px; /* Adiciona preenchimento ao botão */
+  text-align: center; /* Centraliza o texto */
+  text-decoration: none; /* Remove decoração de texto */
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px; /* Adiciona bordas arredondadas */
+  transition: background-color 0.3s; /* Adiciona transição suave na cor de fundo */
+}
+
+/* Adiciona efeito de hover nos botões */
+.product button:hover,
+.product2 button:hover,
+.product3 button:hover,
+.product4 button:hover {
+  background-color: #45a049; /* Altera a cor de fundo quando o mouse está sobre o botão */
+}
+
+/* Adiciona efeito de foco nos botões */
+.product button:focus,
+.product2 button:focus,
+.product3 button:focus,
+.product4 button:focus {
+  outline: none; /* Remove o contorno ao redor do botão */
+  background-color: #357d37; /* Altera a cor de fundo quando o botão é focado */
+}
+  
