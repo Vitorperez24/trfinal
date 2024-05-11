@@ -1,0 +1,173 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+  }
+  
+  .form-container {
+    width: 400px;
+    margin-right: 20px;
+    padding: 20px;
+    border: 2px solid #EAF4F4;
+    background-color: #EAF4F4;
+    border-radius: 20px;
+    line-height: 2.0;
+    position: relative; /* Adiciona posição relativa para os spans */
+  }
+  
+  .form-container label {
+    color: #6B9080;
+  }
+  
+  .form-container input {
+    color: #6B9080;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    width: calc(100% - 10px); /* Ajusta a largura dos inputs para acomodar os spans */
+    margin-bottom: 10px; /* Adiciona um espaçamento entre os campos */
+  }
+  header {
+    background-color: #EAF4F4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+  
+  
+  
+  span {
+    margin-right: 20px;
+    color: #6B9080;
+  }
+  
+  .logo-container {
+    display: inline-block;
+  }
+  
+  .ambiente-container {
+    display: inline-block;
+    margin-left: auto;
+    max-width: 80px;
+    height: 90px;
+  }
+  
+  .logo {
+    max-width: 120px;
+    height: auto;
+  }
+
+
+.imgdallas {
+    text-align: center; /* Centraliza o conteúdo horizontalmente */
+    margin-top: 20px; /* Adiciona espaço acima da imagem */
+}
+
+.imgdallas img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse o tamanho do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+User
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+  }
+  
+  .form-container {
+    width: 400px;
+    margin-right: 20px;
+    padding: 20px;
+    border: 2px solid #EAF4F4;
+    background-color: #EAF4F4;
+    border-radius: 20px;
+    line-height: 2.0;
+    position: relative; /* Adiciona posição relativa para os spans */
+  }
+  
+  .form-container label {
+    color: #6B9080;
+  }
+  
+  .form-container input {
+    color: #6B9080;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    width: calc(100% - 10px); /* Ajusta a largura dos inputs para acomodar os spans */
+    margin-bottom: 10px; /* Adiciona um espaçamento entre os campos */
+  }
+  header {
+    background-color: #EAF4F4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+  
+  
+  
+  span {
+    margin-right: 20px;
+    color: #6B9080;
+  }
+  
+  .logo-container {
+    display: inline-block;
+  }
+  
+  .ambiente-container {
+    display: inline-block;
+    margin-left: auto;
+    max-width: 80px;
+    height: 90px;
+  }
+  
+  .logo {
+    max-width: 120px;
+    height: auto;
+  }
+
+  .ofertas {
+    display: flex;
+    justify-content: center; /* Centraliza os quadrados na página */
+  }
+  
+  .product {
+    width: 200px; /* Largura dos quadrados */
+    text-align: center;
+    border: 1px solid #ccc; /* Adiciona uma borda cinza ao redor dos quadrados */
+    padding: 10px; /* Adiciona um espaçamento interno para separar a borda do conteúdo */
+    margin: 0 10px; /* Adiciona um espaçamento horizontal entre os quadrados */
+  }
+  
+  .product img {
+    width: 100px; /* Tamanho da imagem */
+    height: 100px;
+  }
+  
+  .product button {
+    margin-top: 10px; /* Espaçamento entre a imagem e o botão */
+  }
+  .mensagem {
+    position: fixed; /* Fixa o elemento na tela */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Move o elemento para o centro */
+    background-color: #fff; /* Cor de fundo */
+    padding: 20px; /* Espaçamento interno */
+    border: 1px solid #000; /* Borda */
+    border-radius: 5px; /* Borda arredondada */
+  }
