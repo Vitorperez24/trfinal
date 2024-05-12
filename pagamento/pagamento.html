@@ -17,26 +17,40 @@
         <span class="ambiente">Ambiente Seguro</span> 
     </header>
 
-    <section class="endereco">
-        <h2>Informações de Endereço</h2>
-        <form>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required><br><br>
+    <div class="form-container-wrapper">
+        <section class="form-container-left">
+            <h2>Informações de Endereço</h2>
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required><br><br>
 
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco" required><br><br>
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required><br><br>
 
-            <label for="cidade">Cidade:</label>
-            <input type="text" id="cidade" name="cidade" required><br><br>
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" required><br><br>
 
-            <label for="cep">CEP:</label>
-            <input type="text" id="cep" name="cep" required><br><br>
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" required><br><br>
 
-            <button type="submit">Continuar para o pagamento</button>
-        </form>
-    </section>
+                <button type="submit">Continuar para o pagamento</button>
+            </form>
+        </section>
 
-    <div class="linha-vertical"></div> <!-- Linha vertical -->
+        <div class="vertical-line"></div> <!-- Linha vertical -->
 
-    <section class="pagamento">
-        <h2>Método de Pagamento</
+        <section class="form-container-right">
+            <h2>Método de Pagamento</h2>
+            <p>Selecione o método de pagamento:</p>
+            <button onclick="realizarPagamentoPix()">Pagar com Pix</button>
+        </section>
+    </div>
+
+    <script>
+        function realizarPagamentoPix() {
+            // Coloque aqui o código para realizar o pagamento via Pix
+            alert("Você selecionou pagar com Pix. Em breve será redirecionado.");
+        }
+    </script>
+</body>
+</html>
