@@ -156,6 +156,7 @@ nav ul li a:hover:after {
 
 /* Adicione este trecho para alinhar as imagens da classe "ofertas" na horizontal */
 .ofertas {
+    margin-left:100px;
     display: flex;
 }
 
@@ -177,7 +178,7 @@ nav ul li a:hover:after {
 }
 .produto {
     text-align: center; /* Centraliza o texto */
-    margin-bottom: 20px; /* Adiciona margem entre os produtos */
+    margin-bottom: 100px; /* Adiciona margem entre os produtos */
 }
 
 .produto img {
@@ -207,4 +208,9 @@ nav ul li a:hover:after {
 
 .btn-add-to-cart:hover {
     background-color: #ADE1CA;
+}
+.venda{
+    font-size:  12px;
+    font-family: sans-serif;
+    border-top-right-radius: 20%;
 }
