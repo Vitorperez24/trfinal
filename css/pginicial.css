@@ -35,6 +35,7 @@ nav ul {
 
 nav ul li {
     margin-right: 20px;
+    position: relative;
 }
 
 nav ul li a {
@@ -74,73 +75,91 @@ nav ul li a:hover:after {
     background-color: #333; /* Altera a cor ao passar o mouse */
 }
 
+nav ul li:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #EAF4F4;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+.submenu li a {
+    text-transform: none;
+    padding: 5px 10px;
+}
+
 .pesquisa {
     display: flex;
     align-items: center;
-    margin-left: auto;
+    justify-content: center;
 }
 
 .pesquisa input[type="text"] {
-    padding: 8px;
-    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
 }
 
-.pesquisa button,
-.user-actions button {
-    padding: 10px 20px;
+.pesquisa button {
+    padding: 5px 10px;
+    font-size: 16px;
     background-color: #6B9080;
     color: white;
     border: none;
     cursor: pointer;
     margin-left: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.pesquisa button:hover,
-.user-actions button:hover {
-    background-color: #ADE1CA;
 }
 
 .user-actions {
     display: flex;
     align-items: center;
-    margin-left: auto; /* Move os botões para a direita */
 }
 
-.menu {
-    margin-top: 20px; /* Ajuste a margem conforme necessário */
+.user-actions button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #6B9080;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
 }
 
 .imagem-container {
-    display: flex; /* Permite que as imagens sejam exibidas lado a lado */
-    justify-content: center; /* Centraliza as imagens horizontalmente */
-    margin-top: 20px; /* Adiciona margem acima das imagens */
-}
-
-.imgrl, .imgrl2 {
-    width: 50%; /* Define a largura de cada imagem para ocupar metade do contêiner */
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .imgrl {
-    margin-right: 10px; /* Adiciona margem entre as imagens */
+    max-width: 100%;
+    height: auto;
+    border: none;
+    margin-right: 10px;
 }
 
 .fundo {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
     background-color: #EAF4F4;
     color: black;
     padding: 20px;
     text-align: center;
 }
+
 .linha-separadora {
     border-top: 1px solid #6B9080; /* Cor e estilo da linha */
     margin-top: 20px; /* Espaço entre a linha e os elementos acima */
     margin-bottom: 20px; /* Espaço entre a linha e os elementos abaixo */
 }
+
 .textmarca {
     font-family: sans-serif;
     color: #6B9080;
@@ -152,30 +171,27 @@ nav ul li a:hover:after {
 .primeira-imagem {
     border: none; /* Remove a borda da primeira imagem */
 }
-/* Seu código CSS atual */
 
-/* Adicione este trecho para alinhar as imagens da classe "ofertas" na horizontal */
 .ofertas {
-    margin-left:100px;
+    margin-left: 100px;
     display: flex;
 }
 
 .product {
     flex: 1;
 }
-/* Seu código CSS atual */
 
-/* Adicione este trecho para definir a largura das imagens */
 .product img {
     max-width: 250px; /* Defina o tamanho máximo desejado */
     max-height: 250px; /* Defina o tamanho máximo desejado */
-
 }
-.linha-separadora2  {
+
+.linha-separadora2 {
     border-top: 1px solid #6B9080; /* Cor e estilo da linha */
     margin-top: 20px; /* Espaço entre a linha e os elementos acima */
     margin-bottom: 20px; /* Espaço entre a linha e os elementos abaixo */
 }
+
 .produto {
     text-align: center; /* Centraliza o texto */
     margin-bottom: 100px; /* Adiciona margem entre os produtos */
@@ -185,17 +201,20 @@ nav ul li a:hover:after {
     max-width: 250px; /* Defina o tamanho máximo desejado */
     max-height: 250px; /* Defina o tamanho máximo desejado */
 }
+
 .venda {
     display: flex;
 }
- 
+
 .produto {
     flex: 1;
 }
+
 .produto img {
     max-width: 250px; /* Defina o tamanho máximo desejado */
     max-height: 250px; /* Defina o tamanho máximo desejado */
 }
+
 .btn-add-to-cart {
     background-color: #6B9080;
     color: white;
@@ -209,8 +228,22 @@ nav ul li a:hover:after {
 .btn-add-to-cart:hover {
     background-color: #ADE1CA;
 }
-.venda{
-    font-size:  12px;
+
+.venda {
+    font-size: 12px;
     font-family: sans-serif;
     border-top-right-radius: 20%;
+}
+.cart-message {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
 }
