@@ -18,6 +18,54 @@ header {
     margin-right: 10px;
 }
 
+.pesquisa {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+}
+
+.pesquisa input[type="text"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.pesquisa button {
+    padding: 10px 20px;
+    background-color: #6B9080;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.pesquisa button:hover {
+    background-color: #ADE1CA;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+.user-actions button {
+    padding: 10px 20px;
+    background-color: #6B9080;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.user-actions button:hover {
+    background-color: #ADE1CA;
+}
+
 nav {
     width: calc(100% - 100px); /* Reduz a largura do nav para deixar espaço para o menu */
     display: flex;
@@ -98,53 +146,24 @@ nav ul li:hover .submenu {
     padding: 5px 10px;
 }
 
-.pesquisa {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.pesquisa input[type="text"] {
-    padding: 5px;
-    font-size: 16px;
-}
-
-.pesquisa button {
-    padding: 5px 10px;
-    font-size: 16px;
-    background-color: #6B9080;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-.user-actions {
-    display: flex;
-    align-items: center;
-}
-
-.user-actions button {
-    padding: 5px 10px;
-    font-size: 16px;
-    background-color: #6B9080;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
+/* Ajuste do contêiner de imagens e das imagens */
 .imagem-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 20px;
+    padding: 0 20px; /* Adiciona padding para evitar que as imagens toquem as bordas da tela */
 }
 
 .imgrl {
-    max-width: 100%;
+    width: calc(50% - 10px); /* Define a largura para ocupar 50% do contêiner, menos a margem */
     height: auto;
     border: none;
-    margin-right: 10px;
+    margin-right: 10px; /* Espaçamento entre as imagens */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+}
+
+.imgrl:last-child {
+    margin-right: 0; /* Remove a margem da última imagem */
 }
 
 .fundo {
@@ -234,6 +253,7 @@ nav ul li:hover .submenu {
     font-family: sans-serif;
     border-top-right-radius: 20%;
 }
+
 .cart-message {
     display: none; /* Inicialmente escondido */
     position: fixed;
