@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DallasPet - Produto</title>
     <link rel="stylesheet" href="css/produdoaberto.css">
+    <script src="produtoaberto.js" defer></script>
 </head>
 <body>
     <header>
@@ -18,14 +19,13 @@
         <div class="user-actions">
             <button>🛒</button>
             <button>Entrar</button>
-            <button>Cadastrar-se</button>
+            <button type="button" id="btnCadastrar" class="button">Cadastrar-se</button>
         </div>
     </header>
     <main>
         <section class="product-details">
             <div class="product-images">
                 <img src="img/Capturar.PNG" alt="Ração Golden Special">
-              
             </div>
             <div class="product-info">
                 <h1>Ração Golden Special para Cães Adultos Sabor Frango e Carne</h1>
@@ -48,26 +48,36 @@
         </section>
         <section class="related-products">
             <div class="product-card">
-                <img src="related1.jpg" alt="Produto Relacionado 1">
+                <img src="img/Capturar.PNG" alt="Produto Relacionado 1">
                 <p>R$ 150,00</p>
                 <p>Descrição do produto relacionado</p>
             </div>
             <div class="product-card">
-                <img src="related2.jpg" alt="Produto Relacionado 2">
+                <img src="img/Capturar.PNG" alt="Produto Relacionado 2">
                 <p>R$ 155,00</p>
                 <p>Descrição do produto relacionado</p>
             </div>
             <div class="product-card">
-                <img src="related3.jpg" alt="Produto Relacionado 3">
+                <img src="img/Capturar.PNG" alt="Produto Relacionado 3">
                 <p>R$ 160,00</p>
                 <p>Descrição do produto relacionado</p>
             </div>
             <div class="product-card">
-                <img src="related4.jpg" alt="Produto Relacionado 4">
+                <img src="img/Capturar.PNG" alt="Produto Relacionado 4">
                 <p>R$ 165,00</p>
                 <p>Descrição do produto relacionado</p>
             </div>
         </section>
     </main>
+   
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("btnCadastrar").addEventListener("click", function() {
+                window.location.href = "cadastro.html";
+            });
+
+            
+        });
+    </script>
 </body>
 </html>
