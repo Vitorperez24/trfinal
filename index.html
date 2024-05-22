@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetShop Marketplace</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="pginicial.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logodallaspet.PNG" alt="Logo do PetShop Marketplace">
+            <h1></h1>
+        </div>
+        <nav>
+            <div class="pesquisa">
+                <input type="text" placeholder="Pesquisar...">
+                <button type="button"  class="button">Pesquisar</button>
+            </div>
+            <div class="user-actions">
+                <button type="button" id="btnentrar" class="button">Entrar</button>
+                <button type="button" id="btnCadastrar" class="button">Cadastrar</button>
+                <button type="button" id="btnCarrinho" class="button">🛒</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="menu">
+        <nav>
+            <ul>
+                <li><a href="#">Cachorro</a>
+                    <ul class="submenu">
+                        <li><a href="#">Rações</a></li>
+                        <li><a href="#">Petiscos e Ossos</a></li>
+                        <li><a href="#">Farmácia</a></li>
+                        <li><a href="#">Coleiras</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Gato</a>
+                    <ul class="submenu">
+                        <li><a href="#">Rações</a></li>
+                        <li><a href="#">Petiscos e Ossos</a></li>
+                        <li><a href="#">Farmácia</a></li>
+                        <li><a href="#">Coleiras</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Pássaro</a>
+                    <ul class="submenu">
+                        <li><a href="#">Rações</a></li>
+                        
+                        <li><a href="#">Gaiolas</a></li>
+                        
+                        <li><a href="#">Acessórios</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Dallaspet</a>
+                    <ul class="submenu">
+                        <li><a href="#">Conheça</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="imagem-container">
+        <img src="img/qq.PNG" class="imgrl">
+        <img src="img/raçoes gato.PNG" class="imgrl"> 
+
+    </div>
+
+    <hr class="linha-separadora"> <!-- Linha horizontal -->
+
+    <h3 class="textmarca">Marcas Mais bem avaliadas</h3>
+
+    <div class="ofertas-container">
+        <div class="ofertas">
+            <div class="product">
+                <img src="img/Avaliação.PNG" alt="Produto">
+            </div>
+
+            <div class="product">
+                <img src="img/Avaliação.PNG" alt="Produto">
+            </div>
+
+            <div class="product">
+                <img src="img/Avaliação.PNG" alt="Produto">
+            </div>
+
+            <div class="product">
+                <img src="img/Avaliação.PNG" alt="Produto">
+            </div>
+        </div>
+    </div>
+
+    <hr class="linha-separadora2"> <!-- Linha horizontal -->
+
+    <div class="venda">
+        <div class="produto">
+            <img src="img/Capturar.PNG" alt="Produto 1">
+            <h3>Ração Golden Special para Cães Adultos Sabor Frango e Carne</h3>
+            <p>R$ 50,00</p>
+            <button class="btn-add-to-cart">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="img/Capturar.PNG" alt="Produto 1">
+            <h3>Ração Golden Special para Cães Adultos Sabor Frango e Carne</h3>
+            <p>R$ 50,00</p>
+            <button class="btn-add-to-cart">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="img/Capturar.PNG" alt="Produto 1">
+            <h3>Ração Golden Special para Cães Adultos Sabor Frango e Carne</h3>
+            <p>R$ 50,00</p>
+            <button class="btn-add-to-cart">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="img/Capturar.PNG" alt="Produto 1">
+            <h3>Ração Golden Special para Cães Adultos Sabor Frango e Carne</h3>
+            <p>R$ 50,00</p>
+            <button class="btn-add-to-cart">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+
+    <div id="cart-message" class="cart-message">
+        <p>Você ainda não tem produtos adicionados à sacola.</p>
+        <p>Escolha tudo que o seu pet precisa e adicione à sacola para comprar.</p>
+        <button id="close-cart-message" class="button">Entendi</button>
+    </div>
+
+    <footer class="fundo">
+        <p>&copy; 2024 Dallaspet Marketplace. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("btnCadastrar").addEventListener("click", function() {
+                window.location.href = "cadastro.html";
+            });
+
+            document.getElementById("btnCarrinho").addEventListener("click", function() {
+                document.getElementById("cart-message").style.display = "block";
+            });
+
+            document.getElementById("close-cart-message").addEventListener("click", function() {
+                document.getElementById("cart-message").style.display = "none";
+            });
+        });
+    </script>
+</body>
+</html>
