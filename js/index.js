@@ -1,27 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Adicionando um ouvinte de evento ao botão
+    // Adicionando ouvintes de evento aos botões
+    document.getElementById("btndallas").addEventListener("click", function() {
+        window.location.href = "dallasclub.html";
+    });
+
     document.getElementById("btnCadastrar").addEventListener("click", function() {
-        // Redirecionando para a página de cadastro
         window.location.href = "cadastro.html";
     });
-});
-document.addEventListener("DOMContentLoaded", function() {
-    // Adicionando um ouvinte de evento ao botão
+
     document.getElementById("btnentrar").addEventListener("click", function() {
-        // Redirecionando para a página de cadastro
         window.location.href = "cadastro.html";
     });
-});
-document.addEventListener("DOMContentLoaded", function() {
-    // Adicionando um ouvinte de evento ao botão
+
     document.getElementById("btnCarrinho").addEventListener("click", function() {
-        // Redirecionando para a página de cadastro
         window.location.href = "carrinho.html";
-    });
-});
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("btnCadastrar").addEventListener("click", function() {
-        window.location.href = "cadastro.html";
     });
 
     // Adiciona evento para todos os botões "Adicionar ao Carrinho"

@@ -16,7 +16,7 @@
         <nav>
             <div class="pesquisa">
                 <input type="text" placeholder="Pesquisar...">
-                <button type="button"  class="button">Pesquisar</button>
+                <button type="button" class="button">Pesquisar</button>
             </div>
             <div class="user-actions">
                 <button type="button" id="btnentrar" class="button">Entrar</button>
@@ -48,17 +48,14 @@
                 <li><a href="#">Pássaro</a>
                     <ul class="submenu">
                         <li><a href="#">Rações</a></li>
-                        
                         <li><a href="#">Gaiolas</a></li>
-                        
                         <li><a href="#">Acessórios</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Dallaspet</a>
                     <ul class="submenu">
                         <li><a href="#">Conheça</a></li>
-                        <li><a href="#">Ofertas</a></li>
-                        
+                        <li><a href="#" id="btnOfertas">Ofertas</a></li>
                     </ul>
                 </li>
             </ul>
@@ -67,8 +64,7 @@
 
     <div class="imagem-container">
         <img src="img/qq.PNG" class="imgrl">
-        <img src="img/raçoes gato.PNG" class="imgrl"> 
-
+        <img src="img/raçoes gato.PNG" class="imgrl">
     </div>
 
     <hr class="linha-separadora"> <!-- Linha horizontal -->
@@ -127,7 +123,7 @@
         </div>
     </div>
 
-    <div id="cart-message" class="cart-message">
+    <div id="cart-message" class="cart-message" style="display:none;">
         <p>Você ainda não tem produtos adicionados à sacola.</p>
         <p>Escolha tudo que o seu pet precisa e adicione à sacola para comprar.</p>
         <button id="close-cart-message" class="button">Entendi</button>
@@ -139,8 +135,16 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("btnOfertas").addEventListener("click", function() {
+                window.location.href = "dallasclub2.html";
+            });
+
             document.getElementById("btnCadastrar").addEventListener("click", function() {
                 window.location.href = "cadastro.html";
+            });
+
+            document.getElementById("btnentrar").addEventListener("click", function() {
+                window.location.href = "login.html"; // Substitua "cadastro.html" por "login.html" se for o caso
             });
 
             document.getElementById("btnCarrinho").addEventListener("click", function() {
@@ -149,6 +153,12 @@
 
             document.getElementById("close-cart-message").addEventListener("click", function() {
                 document.getElementById("cart-message").style.display = "none";
+            });
+
+            document.querySelectorAll(".btn-add-to-cart").forEach(function(button) {
+                button.addEventListener("click", function() {
+                    document.getElementById("cart-message").style.display = "block";
+                });
             });
         });
     </script>

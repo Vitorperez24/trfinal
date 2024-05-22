@@ -240,3 +240,31 @@ main {
 .btn-add-to-cart:hover {
     background-color: #ADE1CA;
 }
+/* Estilização do dropdown */
+.submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 5px); /* Adiciona um pequeno espaço entre o item do menu e o dropdown */
+    background-color: #EAF4F4;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+  }
+  
+  .submenu li {
+    margin: 5px 0;
+  }
+  
+  .submenu li a {
+    text-transform: none;
+    padding: 8px 16px; /* Reduz um pouco o padding para ficar mais compacto */
+    display: block;
+    transition: background-color 0.3s; /* Adiciona transição de cor ao passar o mouse */
+  }
+  
+  .submenu li a:hover {
+    background-color: #ADE1CA; /* Altera a cor de fundo ao passar o mouse */
+    color: #fff; /* Altera a cor do texto para branco */
+  }
+  
