@@ -3,44 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Login</title>
+    <title>Login e Cadastro</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     <header>
-        <div class="logo-cointainer">
-          <img class="Logo DallasPet" src="Imagens/logo dallaspet (1).PNG">
+        <div class="logo-container">
+            <img src="img/logodallaspet.PNG" alt="DallasPet Logo" class="logo">
         </div>
-        <div class="ambiente-container">
-          <img src="Imagens/ambiente seguro.PNG">
-        </div>
-        <span class="ambiente">Ambiente Seguro</span> 
+        <span class="ambiente-seguro">
+            <img src="img/ambiente seguro.PNG" alt="Ambiente Seguro" class="icon">
+            Ambiente Seguro
+        </span>
     </header>
-
-    <div class="principal-login">
-
-      <div class="login-esquerda">
-        <div class="card-login">
-          <h1>Acesse sua Conta</h1>
-          <div class="textfield">
-            <label for="email">Email</label>
-            <input type="text" name="email" placeholder="Digite seu email">
-          </div>
-
-          <div class="textfield">
-            <label for="senha">Senha</label>
-            <input type="password" name="senha" placeholder="Digite sua senha">
-          </div>
-          <button class="btn-login">Entrar</button>
+    <main>
+        <div class="login-container">
+            <h2>Acesse sua conta</h2>
+            <form>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu email">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
+                <button type="submit">Entrar</button>
+                <a href="#" class="esqueceu-senha">Esqueceu sua senha?</a>
+            </form>
         </div>
-      </div>
-
-      <div class="login-direita">
-        <h2>Cadastre sua conta é rápido,fácil e gratuito!</h2>
-        <h4>Com a sua conta você tem acesso a ofertas exclusivas, <p>descontos, acompanhar os seus pedidos e muito mais!</p></h4>
-        <button class="btn-cadastro">Cadastrar</button>
-      </div>
-    </div>
-
+        <div class="cadastro-container">
+            <h2>Cadastre sua conta é rápido, fácil e gratuito!</h2>
+            <p>
+                Com a sua conta você tem acesso a ofertas exclusivas, descontos,
+                acompanhar os seus pedidos e muito mais!
+            </p>
+            <button type="button">Cadastrar</button>
+        </div>
+    </main>
+    <script src="js/login.js"></script>
 </body>
 </html>
