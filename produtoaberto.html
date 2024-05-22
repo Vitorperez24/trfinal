@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DallasPet - Produto</title>
     <link rel="stylesheet" href="css/produdoaberto.css">
-    <script src="produtoaberto.js" defer></script>
 </head>
 <body>
     <header>
@@ -19,13 +18,60 @@
         <div class="user-actions">
             <button>🛒</button>
             <button>Entrar</button>
-            <button type="button" id="btnCadastrar" class="button">Cadastrar-se</button>
+            <button>Cadastrar-se</button>
         </div>
     </header>
     <main>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="#">Cachorro</a>
+                        <ul class="submenu">
+                            <li><a href="#">Rações</a></li>
+                            <li><a href="#">Petiscos e Ossos</a></li>
+                            <li><a href="#">Brinquedos</a></li>
+                            <li><a href="#">Farmácia</a></li>
+                            <li><a href="#">Caminhas, Casinhas e Portões</a></li>
+                            <li><a href="#">Coleiras</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Gato</a>
+                        <ul class="submenu">
+                            <li><a href="#">Rações</a></li>
+                            <li><a href="#">Petiscos</a></li>
+                            <li><a href="#">Brinquedos</a></li>
+                            <li><a href="#">Farmácia</a></li>
+                            <li><a href="#">Caminhas e Casinhas</a></li>
+                            <li><a href="#">Arranhadores</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Pássaro</a>
+                        <ul class="submenu">
+                            <li><a href="#">Rações</a></li>
+                            <li><a href="#">Petiscos</a></li>
+                            <li><a href="#">Brinquedos</a></li>
+                            <li><a href="#">Gaiolas</a></li>
+                            <li><a href="#">Suplementos</a></li>
+                            <li><a href="#">Acessórios</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Dallaspet</a>
+                        <ul class="submenu">
+                            <li><a href="#">Sobre Nós</a></li>
+                            <li><a href="#">Nossa Missão</a></li>
+                            <li><a href="#">Contato</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Eventos</a></li>
+                            <li><a href="#">Parceiros</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
         <section class="product-details">
             <div class="product-images">
                 <img src="img/Capturar.PNG" alt="Ração Golden Special">
+              
             </div>
             <div class="product-info">
                 <h1>Ração Golden Special para Cães Adultos Sabor Frango e Carne</h1>
@@ -42,42 +88,32 @@
                     <p>R$ 180,00</p>
                     <p>ou 2x de R$ 90,00 sem juros</p>
                 </div>
-                <button id="pdtcarrinho" class="btn-add-to-cart">Adicionar ao carrinho</button>
+                <button class="btn-add-to-cart">Adicionar ao carrinho</button>
                 <p class="image-disclaimer">Imagens meramente ilustrativas</p>
             </div>
         </section>
         <section class="related-products">
             <div class="product-card">
-                <img src="img/Capturar.PNG" alt="Produto Relacionado 1">
+                <img src="related1.jpg" alt="Produto Relacionado 1">
                 <p>R$ 150,00</p>
                 <p>Descrição do produto relacionado</p>
             </div>
             <div class="product-card">
-                <img src="img/Capturar.PNG" alt="Produto Relacionado 2">
+                <img src="related2.jpg" alt="Produto Relacionado 2">
                 <p>R$ 155,00</p>
                 <p>Descrição do produto relacionado</p>
             </div>
             <div class="product-card">
-                <img src="img/Capturar.PNG" alt="Produto Relacionado 3">
+                <img src="related3.jpg" alt="Produto Relacionado 3">
                 <p>R$ 160,00</p>
                 <p>Descrição do produto relacionado</p>
             </div>
             <div class="product-card">
-                <img src="img/Capturar.PNG" alt="Produto Relacionado 4">
+                <img src="related4.jpg" alt="Produto Relacionado 4">
                 <p>R$ 165,00</p>
                 <p>Descrição do produto relacionado</p>
             </div>
         </section>
     </main>
-   
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("pdtcarrinho").addEventListener("click", function() {
-                window.location.href = "carrinho.html";
-            });
-
-            
-        });
-    </script>
 </body>
 </html>

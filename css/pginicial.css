@@ -148,6 +148,7 @@ nav ul li:hover .submenu {
 
 /* Ajuste do contêiner de imagens e das imagens */
 .imagem-container {
+
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
