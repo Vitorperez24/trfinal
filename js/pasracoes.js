@@ -11,6 +11,12 @@ function redirectToPage(id) {
             window.location.href = "cadastro.html";
             break;
         case "btncarrinho":
+            document.getElementById('cart-sidebar').style.display = 'block';
+            break;
+        case "addToCartBtn":
+            window.location.href = "outra_pagina.html";
+            break
+        case "btncarrinho":
             window.location.href = "carrinho.html";
             break;
         case "petiscos-cachorro":
@@ -91,4 +97,14 @@ productImages.forEach(image => {
         // Aqui você pode definir a página para a qual deseja redirecionar
         window.location.href = 'produtoaberto.html';
     });
+});
+
+// Event listener para o botão "Voltar"
+document.getElementById("voltar").addEventListener("click", function() {
+    document.getElementById('cart-sidebar').style.display = 'none';
+});
+
+// Event listener para o botão "Finalizar Compra"
+document.getElementById("finalizarCompra").addEventListener("click", function() {
+    window.location.href = 'pagamento.html'; // Substitua 'pagina_finalizacao.html' pelo URL da página desejada
 });
