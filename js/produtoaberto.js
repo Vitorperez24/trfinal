@@ -5,16 +5,22 @@ function redirectToPage(id) {
             window.location.href = "crracoes.html";
             break;
         case "btnentrar":
-            window.location.href = "index.html";
+            window.location.href = "login.html";
             break;
         case "btncadastrar":
             window.location.href = "cadastro.html";
             break;
         case "btncarrinho":
-            window.location.href = "carrinho.html";
+            document.getElementById('cart-sidebar').style.display = 'block';
             break;
         case "addToCartBtn":
-            window.location.href = "carrinho.html";
+            window.location.href = "outra_pagina.html";
+            break;
+        case "finalizarCompra":
+            window.location.href = "pagamento.html";
+            break;
+        case "voltar":
+            document.getElementById('cart-sidebar').style.display = 'none';
             break;
         default:
             console.log("ID não reconhecido:", id);
@@ -40,6 +46,10 @@ addClickListener("btncarrinho", "btncarrinho");
 
 // Event listener para o botão de adicionar ao carrinho
 addClickListener("addToCartBtn", "addToCartBtn");
+
+// Event listeners para os botões do carrinho
+addClickListener("finalizarCompra", "finalizarCompra");
+addClickListener("voltar", "voltar");
 
 // Seletor para todas as imagens dentro da classe "product-card"
 const productImages = document.querySelectorAll('.product-card img');
