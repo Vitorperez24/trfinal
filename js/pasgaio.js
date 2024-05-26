@@ -89,6 +89,6 @@ const productImages = document.querySelectorAll('.product-card img');
 productImages.forEach(image => {
     image.addEventListener('click', function() {
         // Aqui você pode definir a página para a qual deseja redirecionar
-        window.location.href = 'carrinho.html';
+        window.location.href = 'produtoaberto.html';
     });
 });
