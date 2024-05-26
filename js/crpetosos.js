@@ -5,7 +5,7 @@ function redirectToPage(id) {
             window.location.href = "crracoes.html";
             break;
         case "btnentrar":
-            window.location.href = "index.html";
+            window.location.href = "login.html";
             break;
         case "btncadastrar":
             window.location.href = "cadastro.html";

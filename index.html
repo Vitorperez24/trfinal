@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetShop Marketplace</title>
     <link rel="stylesheet" href="css/index.css">
-    <script src="pginicial.js"></script>
 </head>
 <body>
     <header>
@@ -137,39 +136,12 @@
             <button id="finalizarCompra" class="finalizar-compra">Finalizar Compra</button>
             <button id="voltar" class="voltar">Voltar</button>
         </div>
+    </aside>
 
     <footer class="fundo">
         <p>&copy; 2024 Dallaspet Marketplace. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("btnOfertas").addEventListener("click", function() {
-                window.location.href = "dallasclub2.html";
-            });
-
-            document.getElementById("btnCadastrar").addEventListener("click", function() {
-                window.location.href = "cadastro.html";
-            });
-
-            document.getElementById("btnentrar").addEventListener("click", function() {
-                window.location.href = "login.html"; // Substitua "cadastro.html" por "login.html" se for o caso
-            });
-
-            document.getElementById("btnCarrinho").addEventListener("click", function() {
-                document.getElementById("cart-message").style.display = "block";
-            });
-
-            document.getElementById("close-cart-message").addEventListener("click", function() {
-                document.getElementById("cart-message").style.display = "none";
-            });
-
-            document.querySelectorAll(".btn-add-to-cart").forEach(function(button) {
-                button.addEventListener("click", function() {
-                    document.getElementById("cart-message").style.display = "block";
-                });
-            });
-        });
-    </script>
+    <script src="js/index.js"></script>
 </body>
 </html>

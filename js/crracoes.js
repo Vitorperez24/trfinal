@@ -5,7 +5,7 @@ function redirectToPage(id) {
             window.location.href = "crracoes.html";
             break;
         case "btnentrar":
-            window.location.href = "index.html";
+            window.location.href = "login.html";
             break;
         case "btncadastrar":
             window.location.href = "cadastro.html";
@@ -16,9 +16,6 @@ function redirectToPage(id) {
         case "addToCartBtn":
             window.location.href = "outra_pagina.html";
             break
-        case "btncarrinho":
-            window.location.href = "carrinho.html";
-            break;
         case "petiscos-cachorro":
             window.location.href = "crpetisos.html";
             break;
@@ -106,5 +103,5 @@ document.getElementById("voltar").addEventListener("click", function() {
 
 // Event listener para o botão "Finalizar Compra"
 document.getElementById("finalizarCompra").addEventListener("click", function() {
-    window.location.href = 'pagamento.html'; // Substitua 'pagina_finalizacao.html' pelo URL da página desejada
+    window.location.href = 'pagamento.html'; // Substitua 'pagamento.html' pelo URL da página desejada
 });
