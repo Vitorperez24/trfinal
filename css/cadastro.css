@@ -94,3 +94,18 @@ span {
   cursor: pointer; /* Adiciona cursor de apontar */
   margin-top: 10px; /* Adiciona espaço entre o botão e os inputs */
 }
+
+.input-container {
+  position: relative;
+}
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+}
+input[type="password"] {
+  padding-right: 30px;
+}
