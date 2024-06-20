@@ -10,19 +10,19 @@
 <body>
   <header>
     <div class="logo-container">
-      <img class="logo" src="img/logo dallaspet.PNG">
+      <img class="logo" src="img/logodallaspet.PNG" alt="Dallas Pet Logo">
     </div>
     <div class="ambiente-container">
-      <img src="img/ambiente seguro.PNG">
+      <img src="img/ambiente seguro.PNG" alt="Ambiente Seguro">
     </div>
     <span class="ambiente">Ambiente Seguro</span> 
   </header>
 
   <div class="imgdallas">
-    <img class="logo" src="img/Dallasclub.PNG">
+    <img class="logo" src="img/Dallasclub.PNG" alt="Dallas Club Logo">
   </div>
 
-  <div class ="texto">
+  <div class="texto">
     <h1>
       Tudo pro seu pet e vantagens pra você
       O clube de benefícios com ofertas, cupons e benefícios.
@@ -32,8 +32,15 @@
   </div>
 
   <div class="imgdll">
-    <img class="logo" src="img/img dallas.PNG">
+    <img class="logo" src="img/img dallas.PNG" alt="Dallas Image">
     <button id="dallas2" class="botao">Confira</button>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("dallas2").addEventListener("click", function() {
+            window.location.href = "dallasclub2.html";
+        });
+      });
+        </script>
 </body>
 </html>
