@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #EAF4F4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-width: 70px;
+    height: auto;
+}
+
+.ambiente-seguro {
+    display: flex;
+    align-items: center;
+    color: #6B9080;
+}
+
+.ambiente-seguro .icon {
+    max-width: 20px;
+    margin-right: 10px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 20px;
+    width: 100%;
+}
+
+.login-container, .cadastro-container {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 0 20px;
+}
+
+.login-container {
+    max-width: 350px;
+}
+
+.cadastro-container {
+    max-width: 400px;
+}
+
+h2 {
+    color: #6B9080;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #6B9080;
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #A4C3B2;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8DAA92;
+}
+
+.esqueceu-senha {
+    color: #A4C3B2;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+}
