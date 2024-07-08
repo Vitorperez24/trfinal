@@ -1,9 +1,59 @@
-.container {
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F5F5F5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  background-color: #EAF4F4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.logo-container {
   display: flex;
   align-items: center;
+}
+
+.logo {
+  max-width: 70px;
+  height: auto;
+}
+
+.ambiente-seguro {
+  display: flex;
+  align-items: center;
+  color: #6B9080;
+}
+
+.ambiente-seguro .icon {
+  max-width: 20px;
+  margin-right: 10px;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 100px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .form-container {
@@ -14,7 +64,6 @@
   background-color: #EAF4F4;
   border-radius: 20px;
   line-height: 2.0;
-  position: relative; /* Adiciona posição relativa para os spans */
 }
 
 .form-container label {
@@ -22,33 +71,33 @@
 }
 
 .form-container input {
-  color: #6B9080;
+  color: #445d52;
   border-radius: 5px;
-  box-sizing: border-box;
   border: 2px solid #fff;
-  width: calc(100% - 10px); /* Ajusta a largura dos inputs para acomodar os spans */
-  margin-bottom: 10px; /* Adiciona um espaçamento entre os campos */
+  width: calc(100% - 10px);
+  margin-bottom: 10px;
 }
 
 .form-container input:focus {
-  border-color: #ADE1CA; /* Muda a cor da borda quando o input está em foco */
-}
-
-/* Estilo para os spans de mensagens de erro */
-.form-container span.mensagem {
-  position: absolute;
-  bottom: -20px; /* Posiciona os spans abaixo dos inputs */
-  left: 0;
-  color: #FF6347; /* Cor vermelha para mensagens de erro */
-  font-size: 12px; /* Tamanho da fonte menor para mensagens de erro */
+  border-color: #ADE1CA;
 }
 
 .info-container {
-  width: 400px;
+padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #FFFFFF;
+    width: 300px;
+    margin: 0 20px;}
+
+.info-container h3 {
+  color: #333;
 }
 
 .info-container p {
   font-size: 14px;
+  color: #6B9080;
+  
 }
 
 header {
@@ -58,15 +107,6 @@ header {
   align-items: center;
   padding: 10px;
   width: 100%;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-}
-
-
-
-span {
-  margin-right: 20px;
-  color: #6B9080;
 }
 
 .logo-container {
@@ -88,24 +128,35 @@ span {
 .botao {
   color: black;
   background-color: #ADE1CA;
-  width: 100%; /* Ajusta a largura do botão para preencher o contêiner */
+  width: 100%;
   border-radius: 5px;
-  padding: 10px; /* Adiciona espaço interno ao botão */
-  cursor: pointer; /* Adiciona cursor de apontar */
-  margin-top: 10px; /* Adiciona espaço entre o botão e os inputs */
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 .input-container {
   position: relative;
 }
-.toggle-password {
+
+.password-toggle-icon {
   position: absolute;
+  top: 40%;
   right: 10px;
-  top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  z-index: 2;
 }
+
+.password-toggle-icon i {
+  font-size: 16px;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+
+.password-toggle-icon i:hover {
+  color: #000;
+}
+
 input[type="password"] {
   padding-right: 30px;
 }

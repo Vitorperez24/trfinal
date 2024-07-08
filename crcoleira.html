@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DallasPet - Coleira</title>
+    <title>DallasPet - Coleiras</title>
     <link rel="stylesheet" href="css/crcoleira.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="img/logodallaspet.PNG" alt="DallasPet">
+            <img src="img/logodallaspet.PNG" alt="Logo do PetShop Marketplace">
+            <h1></h1>
         </div>
-        <div class="pesquisa">
-            <input type="text" placeholder="O que seu pet precisa?">
-            <button>Pesquisar</button>
-        </div>
-        <div class="user-actions">
-            <button id="btncarrinho">🛒</button>
-            <button id="btnentrar">Entrar</button>
-            <button id="btncadastrar">Cadastrar-se</button>
-        </div>
+        <nav>
+            <div class="pesquisa">
+                <input type="text" placeholder="Pesquisar...">
+                <button type="button" class="button">Pesquisar</button>
+            </div>
+            <div class="user-actions">
+                <span id="user-info" style="display: none;"></span>
+                <button type="button" id="btnLogout" class="button" style="display: none;">Logout</button>
+                <button type="button" id="btnentrar" class="button">Entrar</button>
+                <button type="button" id="btnCadastrar" class="button">Cadastrar</button>
+                <button type="button" id="btnCarrinho" class="button">🛒</button>
+            </div>
+        </nav>
     </header>
     <div class="menu">
         <nav>
