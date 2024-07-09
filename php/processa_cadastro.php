@@ -1,44 +1,35 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-// Incluir arquivo de configuração
+// Incluir arquivo de conexão
 include 'config.php';
 
-// Verificar se o formulário foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $celular = $_POST['celular'];
-    $senha = $_POST['senha'];
-    $confirmar_senha = $_POST['confirmar_senha'];
+header('Content-Type: application/json');
 
-    // Verificar se as senhas coincidem
-    if ($senha != $confirmar_senha) {
-        echo "As senhas não coincidem!";
-        exit();
-    }
+// Obter dados do formulário
+$nome = $_POST['nome'] ?? '';
+$email = $_POST['email'] ?? '';
+$celular = $_POST['celular'] ?? '';
+$senha = password_hash($_POST['senha'] ?? '', PASSWORD_BCRYPT);
 
-    // Hash da senha para armazenamento seguro
-    $senha_hashed = password_hash($senha, PASSWORD_DEFAULT);
+// Verificar se o email já está registrado
+$query = "SELECT * FROM usuarios WHERE email_usuario='$email'";
+$result = mysqli_query($conn, $query);
 
-    // Inserir dados no banco de dados usando prepared statement
-    $stmt = $conn->prepare("INSERT INTO usuarios (email_usuario, nome_usuario, telefone_usuario, senha_usuario) VALUES (?, ?, ?, ?)");
-    if ($stmt === false) {
-        die('Erro ao preparar a consulta: ' . htmlspecialchars($conn->error));
-    }
+if(mysqli_num_rows($result) > 0) {
+    echo json_encode(['success' => false, 'message' => 'Este email já está registrado!']);
+} else {
+    // Inserir dados no banco de dados
+    $query = "INSERT INTO usuarios (nome_usuario, email_usuario, telefone_usuario, senha_usuario) VALUES ('$nome', '$email', '$celular', '$senha')";
     
-    $stmt->bind_param("ssss", $email, $nome, $celular, $senha_hashed);
-
-    if ($stmt->execute() === TRUE) {
-        echo "Cadastro realizado com sucesso!";
+    if(mysqli_query($conn, $query)) {
+        // Responder com sucesso
+        echo json_encode(['success' => true, 'message' => 'Cadastro realizado com sucesso!']);
     } else {
-        echo "Erro: " . htmlspecialchars($stmt->error);
+        echo json_encode(['success' => false, 'message' => 'Erro ao cadastrar usuário: ' . mysqli_error($conn)]);
     }
-
-    // Fechar a conexão
-    $stmt->close();
-    $conn->close();
 }
+
+mysqli_close($conn);
 ?>
