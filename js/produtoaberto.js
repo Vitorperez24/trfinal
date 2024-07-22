@@ -2,22 +2,22 @@
 function redirectToPage(id) {
     switch (id) {
         case "racoes-cachorro":
-            window.location.href = "crracoes.html";
+            window.location.href = "crracoes.php";
             break;
         case "btnentrar":
-            window.location.href = "login.html";
+            window.location.href = "login.php";
             break;
         case "btncadastrar":
-            window.location.href = "cadastro.html";
+            window.location.href = "cadastro.php";
             break;
         case "btncarrinho":
             document.getElementById('cart-sidebar').style.display = 'block';
             break;
         case "addToCartBtn":
-            window.location.href = "outra_pagina.html";
+            window.location.href = "outra_pagina.php";
             break;
         case "finalizarCompra":
-            window.location.href = "pagamento.html";
+            window.location.href = "pagamento.php";
             break;
         case "voltar":
             document.getElementById('cart-sidebar').style.display = 'none';
@@ -58,6 +58,6 @@ const productImages = document.querySelectorAll('.product-card img');
 productImages.forEach(image => {
     image.addEventListener('click', function() {
         // Aqui você pode definir a página para a qual deseja redirecionar
-        window.location.href = 'carrinho.html';
+        window.location.href = 'carrinho.php';
     });
 });

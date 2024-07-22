@@ -2,58 +2,58 @@
 function redirectToPage(id) {
     switch (id) {
         case "racoes-cachorro":
-            window.location.href = "crracoes.html";
+            window.location.href = "crracoes.php";
             break;
         case "btnentrar":
-            window.location.href = "index.html";
+            window.location.href = "index.php";
             break;
         case "btncadastrar":
-            window.location.href = "cadastro.html";
+            window.location.href = "cadastro.php";
             break;
         case "btncarrinho":
             document.getElementById('cart-sidebar').style.display = 'block';
             break;
         case "addToCartBtn":
-            window.location.href = "outra_pagina.html";
-            break
+            window.location.href = "outra_pagina.php";
+            break;
         case "btncarrinho":
-            window.location.href = "carrinho.html";
+            window.location.href = "carrinho.php";
             break;
         case "petiscos-cachorro":
-            window.location.href = "crpetisos.html";
+            window.location.href = "crpetisos.php";
             break;
         case "farmacia-cachorro":
-            window.location.href = "crfarma.html";
+            window.location.href = "crfarma.php";
             break;
         case "coleiras-cachorro":
-            window.location.href = "crcoleira.html";
+            window.location.href = "crcoleira.php";
             break;
         case "racoes-gato":
-            window.location.href = "gtracoes.html";
+            window.location.href = "gtracoes.php";
             break;
         case "petiscos-gato":
-            window.location.href = "gtpetiosos.html";
+            window.location.href = "gtpetiosos.php";
             break;
         case "farmacia-gato":
-            window.location.href = "gtfarma.html";
+            window.location.href = "gtfarma.php";
             break;
         case "coleiras-gato":
-            window.location.href = "gtcoleira.html";
+            window.location.href = "gtcoleira.php";
             break;
         case "racoes-passaro":
-            window.location.href = "pasracoes.html";
+            window.location.href = "pasracoes.php";
             break;
         case "gaiolas-passaro":
-            window.location.href = "pasgaio.html";
+            window.location.href = "pasgaio.php";
             break;
         case "acessorios-passaro":
-            window.location.href = "pasace.html";
+            window.location.href = "pasace.php";
             break;
         case "conheca-dallas":
-            window.location.href = "dallasclub.html";
+            window.location.href = "dallasclub.php";
             break;
         case "ofertas-dallas":
-            window.location.href = "dallasclub2.html";
+            window.location.href = "dallasclub2.php";
             break;
         default:
             console.log("ID não reconhecido: " + id);
@@ -95,7 +95,7 @@ const productImages = document.querySelectorAll('.product-card img');
 productImages.forEach(image => {
     image.addEventListener('click', function() {
         // Aqui você pode definir a página para a qual deseja redirecionar
-        window.location.href = 'produtoaberto.html';
+        window.location.href = 'produtoaberto.php';
     });
 });
 
@@ -106,5 +106,5 @@ document.getElementById("voltar").addEventListener("click", function() {
 
 // Event listener para o botão "Finalizar Compra"
 document.getElementById("finalizarCompra").addEventListener("click", function() {
-    window.location.href = 'pagamento.html'; // Substitua 'pagina_finalizacao.html' pelo URL da página desejada
+    window.location.href = 'pagamento.php'; // Substitua 'pagamento.php' pelo URL da página desejada
 });

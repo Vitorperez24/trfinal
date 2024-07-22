@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetShop Marketplace</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="./css/indexpg.css">
 </head>
 <body>
     <header>
@@ -18,12 +18,14 @@
                 <button type="button" class="button">Pesquisar</button>
             </div>
             <div class="user-actions">
+                <span id="user-info" style="display: none;"></span>
+                <button type="button" id="btnLogout" class="button" style="display: none;">Logout</button>
                 <button type="button" id="btnentrar" class="button">Entrar</button>
                 <button type="button" id="btnCadastrar" class="button">Cadastrar</button>
                 <button type="button" id="btnCarrinho" class="button">🛒</button>
             </div>
         </nav>
-    </header>
+    </header>      
     <div class="menu">
         <nav>
             <ul>
@@ -96,28 +98,28 @@
             <img src="img/Capturar.PNG" alt="Produto 1">
             <h3>Ração Golden Special para Cães Adultos Sabor Frango e Carne</h3>
             <p>R$ 50,00</p>
-            <button class="btn-add-to-cart">Adicionar ao Carrinho</button>
+            <button class="btn-add-to-cart" data-product-id="1">Adicionar ao Carrinho</button>
         </div>
 
         <div class="produto">
             <img src="img/Capturar.PNG" alt="Produto 1">
             <h3>Ração Golden Special para Cães Adultos Sabor Frango e Carne</h3>
             <p>R$ 50,00</p>
-            <button class="btn-add-to-cart">Adicionar ao Carrinho</button>
+            <button class="btn-add-to-cart" data-product-id="2">Adicionar ao Carrinho</button>
         </div>
 
         <div class="produto">
             <img src="img/Capturar.PNG" alt="Produto 1">
             <h3>Ração Golden Special para Cães Adultos Sabor Frango e Carne</h3>
             <p>R$ 50,00</p>
-            <button class="btn-add-to-cart">Adicionar ao Carrinho</button>
+            <button class="btn-add-to-cart" data-product-id="3">Adicionar ao Carrinho</button>
         </div>
 
         <div class="produto">
             <img src="img/Capturar.PNG" alt="Produto 1">
             <h3>Ração Golden Special para Cães Adultos Sabor Frango e Carne</h3>
             <p>R$ 50,00</p>
-            <button class="btn-add-to-cart">Adicionar ao Carrinho</button>
+            <button class="btn-add-to-cart" data-product-id="4">Adicionar ao Carrinho</button>
         </div>
     </div>
 
@@ -134,7 +136,7 @@
         <div class="cart-summary">
             <p>SUBTOTAL : <span id="subtotal">R$ 180,00</span></p>
             <button id="finalizarCompra" class="finalizar-compra">Finalizar Compra</button>
-            <button id="voltar" class="voltar">Voltar</button>
+            <button id="btnvoltar" class="voltar">Voltar</button>
         </div>
     </aside>
 
@@ -142,6 +144,6 @@
         <p>&copy; 2024 Dallaspet Marketplace. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="js/index.js"></script>
+    <script src="./js/pgindex.js"></script>
 </body>
 </html>

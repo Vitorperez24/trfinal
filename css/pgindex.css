@@ -1,0 +1,107 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+header {
+  background-color: #EAF4F4;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.pesquisa {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.pesquisa input[type="text"] {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.pesquisa button {
+  padding: 10px 20px;
+  background-color: #6B9080;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.pesquisa button:hover {
+  background-color: #ADE1CA;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#user-info {
+  margin-right: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+#user-info:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content button {
+  padding: 10px 20px;
+  background-color: #6B9080;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 5px 0;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-content button:hover {
+  background-color: #ADE1CA;
+}
+
+#btnCarrinho {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background-color: #6B9080;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#btnCarrinho:hover {
+  background-color: #ADE1CA;
+}
