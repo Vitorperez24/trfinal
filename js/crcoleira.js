@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function redirectToPage(id) {
         switch (id) {
             case "racoes-cachorro":
-<<<<<<< HEAD
+
                 window.location.href = "crracoes.php";
                 break;
             case "btnentrar":
@@ -13,21 +13,20 @@ document.addEventListener("DOMContentLoaded", function() {
                 break;
             case "btnCadastrar":
                 window.location.href = "cadastro.php";
-=======
-                window.location.href = "crracoes.html";
+       window.location.href = "crracoes.html";
                 break;
             case "btnentrar":
                 window.location.href = "login.html";
                 break;
             case "btnCadastrar":
                 window.location.href = "cadastro.html";
->>>>>>> 00923980e9edbe82e6b1895f6a70fd5e8358f27d
+
                 break;
             case "btnCarrinho":
                 document.getElementById('cart-sidebar').style.display = 'block';
                 break;
             case "petiscos-cachorro":
-<<<<<<< HEAD
+
                 window.location.href = "crpetisos.php";
                 break;
             case "farmacia-cachorro":
@@ -62,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 break;
             case "ofertas-dallas":
                 window.location.href = "dallasclub2.php";
-=======
+
                 window.location.href = "crpetisos.html";
                 break;
             case "farmacia-cachorro":
@@ -97,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 break;
             case "ofertas-dallas":
                 window.location.href = "dallasclub2.html";
->>>>>>> 00923980e9edbe82e6b1895f6a70fd5e8358f27d
+
                 break;
             case "btnvoltar": // Alterei para "btnvoltar" para corresponder ao ID correto
                 document.getElementById('cart-sidebar').style.display = 'none'; // Fecha o carrinho
@@ -156,11 +155,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
         // Event listener para o botão "Finalizar Compra"
     document.getElementById("finalizarCompra").addEventListener("click", function() {
-<<<<<<< HEAD
+
         window.location.href = 'pagamento.php'; 
-=======
+
         window.location.href = 'pagamento.html'; 
->>>>>>> 00923980e9edbe82e6b1895f6a70fd5e8358f27d
+
     });
 
 // Recupera os dados do usuário do localStorage, se houver

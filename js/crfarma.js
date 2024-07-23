@@ -14,7 +14,7 @@ function redirectToPage(id) {
             document.getElementById('cart-sidebar').style.display = 'block';
             break;
         case "addToCartBtn":
-            window.location.href = "outra_pagina.php";
+            window.location.href = "pagamento.php";
             break;
         case "btncarrinho":
             window.location.href = "carrinho.php";

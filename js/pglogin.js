@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 document.addEventListener("DOMContentLoaded", function() {
     // Adicionando ouvinte de evento ao link "Esqueceu sua senha?"
     document.getElementById("esqueceuSenhaLink").addEventListener("click", function(event) {
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-=======
+
 document.addEventListener("DOMContentLoaded", function() {
     // Adicionando ouvinte de evento ao link "Esqueceu sua senha?"
     document.getElementById("esqueceuSenhaLink").addEventListener("click", function(event) {
@@ -154,4 +154,4 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
->>>>>>> 00923980e9edbe82e6b1895f6a70fd5e8358f27d
+

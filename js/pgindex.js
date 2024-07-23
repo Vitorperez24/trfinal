@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // Função para redirecionar para outra página com base no ID do submenu clicado
 function redirectToPage(id) {
     switch (id) {
@@ -15,7 +15,7 @@ function redirectToPage(id) {
             document.getElementById('cart-sidebar').style.display = 'block';
             break;
         case "addToCartBtn":
-            window.location.href = "outra_pagina.php";
+            window.location.href = "pagamento.php";
             break;
         case "petiscos-cachorro":
             window.location.href = "crpetisos.php";
@@ -106,7 +106,7 @@ document.getElementById("voltar").addEventListener("click", function() {
 document.getElementById("finalizarCompra").addEventListener("click", function() {
     window.location.href = 'pagamento.php'; // Substitua 'pagamento.php' pelo URL da página desejada
 });
-=======
+
 document.addEventListener("DOMContentLoaded", function() {
     console.log("Arquivo index.js carregado!");
 
@@ -250,4 +250,4 @@ if (user && user.username) {
     console.log("Nenhum usuário logado"); // Log para verificação
 }
 });
->>>>>>> 00923980e9edbe82e6b1895f6a70fd5e8358f27d
+
