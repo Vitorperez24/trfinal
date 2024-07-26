@@ -17,3 +17,4 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = "recsenha.php"; // Redirecionar para a página de recuperação de senha
     });
 });
+

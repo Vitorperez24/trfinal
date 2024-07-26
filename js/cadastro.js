@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('.password-toggle-icon').forEach(item => {
         item.addEventListener('click', function () {
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-=======
+
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('.password-toggle-icon').forEach(item => {
         item.addEventListener('click', function () {
@@ -84,4 +84,4 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
->>>>>>> 00923980e9edbe82e6b1895f6a70fd5e8358f27d
+
