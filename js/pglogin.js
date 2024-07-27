@@ -1,9 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Adicionando ouvinte de evento ao link "Esqueceu sua senha?"
-    document.getElementById("esqueceuSenhaLink").addEventListener("click", function(event) {
-        event.preventDefault(); // Prevenir o comportamento padrão do link
-        window.location.href = "recsenha.php"; // Certifique-se de que o caminho está correto
-    });
+
   
     // Evento para o botão "Cadastrar"
     document.getElementById("btnCadastrar").addEventListener("click", function() {
@@ -74,4 +69,11 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error('Erro ao processar o login:', error);
         });
     });
-});
+
+    function redirectToPage(id) {
+        switch (id) {
+            case "esqueceuSenhaLink":
+                window.location.href = "recsenha.php";
+                break;
+
+        }}
