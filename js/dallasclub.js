@@ -4,6 +4,7 @@ function redirectToPage(id) {
         case "racoes-cachorro":
             window.location.href = "crracoes.php";
             break;
+            
         case "btnentrar":
             window.location.href = "login.php";
             break;

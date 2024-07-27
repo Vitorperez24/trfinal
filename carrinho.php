@@ -36,7 +36,7 @@
                 <p>Total descontos: <span>R$0,00</span></p>
                 <h3>Total: <span>R$276,00</span></h3>
                 <button type="button" class="button" id="pgbotao">Ir para pagamento</button>
-                <button type="button" class="button" id="pginicial">Escolher mais produtos</button>
+                <button type="button" class="button" id="btn1">Escolher mais produtos</button>
             </div>
         </div>
 
@@ -46,13 +46,15 @@
             document.getElementById("pgbotao").addEventListener("click", function() {
                 window.location.href = "pagamento.php";
             });
-            document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("pgbotao").addEventListener("click", function() {
-                window.location.href = "pagamento.php";
+            
             });
+            document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("btn1").addEventListener("click", function() {
+                window.location.href = "index.php";
             });
             
             });
+            
             
 
     </script>
