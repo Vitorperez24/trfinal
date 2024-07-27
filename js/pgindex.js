@@ -7,6 +7,15 @@ document.addEventListener("DOMContentLoaded", function() {
             case "racoes-cachorro":
                 window.location.href = "crracoes.php";
                 break;
+            case "btnfinalizar":
+                window.location.href = "pagamento.php";
+                    break;
+            case "btn1":
+            case "btn2":
+            case "btn3":
+            case "btn4":
+                window.location.href = "carrinho.php";
+                break;
             case "btnentrar":
                 window.location.href = "login.php";
                 break;
@@ -74,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Adiciona ouvintes de clique
+    addClickListener("btnfinalizar", "btnfinalizar");
     addClickListener("racoes-cachorro", "racoes-cachorro");
     addClickListener("btnentrar", "btnentrar");
     addClickListener("btnCadastrar", "btnCadastrar");
@@ -91,4 +101,10 @@ document.addEventListener("DOMContentLoaded", function() {
     addClickListener("conheca-dallas", "conheca-dallas");
     addClickListener("ofertas-dallas", "ofertas-dallas");
     addClickListener("btnvoltar", "btnvoltar");
+
+    // Adiciona ouvintes de clique para os botões de adicionar ao carrinho
+    addClickListener("btn1", "btn1");
+    addClickListener("btn2", "btn2");
+    addClickListener("btn3", "btn3");
+    addClickListener("btn4", "btn4");
 });

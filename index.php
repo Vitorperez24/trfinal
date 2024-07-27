@@ -98,28 +98,28 @@
             <img src="img/Capturar.PNG" alt="Produto 1">
             <h3>Ração Golden Special para Cães Adultos Sabor Frango e Carne</h3>
             <p>R$ 50,00</p>
-            <button class="btn-add-to-cart" data-product-id="1">Adicionar ao Carrinho</button>
+            <button class="btn-add-to-cart" id="btn1">Adicionar ao Carrinho</button>
         </div>
 
         <div class="produto">
             <img src="img/Capturar.PNG" alt="Produto 1">
             <h3>Ração Golden Special para Cães Adultos Sabor Frango e Carne</h3>
             <p>R$ 50,00</p>
-            <button class="btn-add-to-cart" data-product-id="2">Adicionar ao Carrinho</button>
+            <button class="btn-add-to-cart" id="btn2">Adicionar ao Carrinho</button>
         </div>
 
         <div class="produto">
             <img src="img/Capturar.PNG" alt="Produto 1">
             <h3>Ração Golden Special para Cães Adultos Sabor Frango e Carne</h3>
             <p>R$ 50,00</p>
-            <button class="btn-add-to-cart" data-product-id="3">Adicionar ao Carrinho</button>
+            <button class="btn-add-to-cart" id="btn3">Adicionar ao Carrinho</button>
         </div>
 
         <div class="produto">
             <img src="img/Capturar.PNG" alt="Produto 1">
             <h3>Ração Golden Special para Cães Adultos Sabor Frango e Carne</h3>
             <p>R$ 50,00</p>
-            <button class="btn-add-to-cart" data-product-id="4">Adicionar ao Carrinho</button>
+            <button class="btn-add-to-cart" id="btn4">Adicionar ao Carrinho</button>
         </div>
     </div>
 
@@ -135,7 +135,7 @@
         </div>
         <div class="cart-summary">
             <p>SUBTOTAL : <span id="subtotal">R$ 180,00</span></p>
-            <button id="finalizarCompra" class="finalizar-compra">Finalizar Compra</button>
+            <button id="btnfinalizar" class="finalizar-compra">Finalizar Compra</button>
             <button id="btnvoltar" class="voltar">Voltar</button>
         </div>
     </aside>
