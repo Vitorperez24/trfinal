@@ -44,11 +44,11 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("pgbotao").addEventListener("click", function() {
-                window.location.href = "pagamento.html";
+                window.location.href = "pagamento.php";
             });
             document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("pgbotao").addEventListener("click", function() {
-                window.location.href = "pagamento.html";
+                window.location.href = "pagamento.php";
             });
             });
             
