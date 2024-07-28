@@ -32,8 +32,7 @@
                     </span>
                 </div>
                 <button type="submit">Entrar</button>
-                <a href="recsenha.php" id="esqueceuSenhaLink" class="esqueceu-senha">Esqueceu sua senha?</a>
-
+                <a href="recsenha.html" id="esqueceuSenhaLink" class="esqueceu-senha">Esqueceu sua senha?</a>
             </form>
         </div>
         <div class="cadastro-container">

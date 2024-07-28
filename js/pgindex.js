@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("Arquivo index.js carregado!");
 
     // Função para redirecionar
     function redirectToPage(id) {
@@ -7,20 +6,11 @@ document.addEventListener("DOMContentLoaded", function() {
             case "racoes-cachorro":
                 window.location.href = "crracoes.php";
                 break;
-            case "btnfinalizar":
-                window.location.href = "pagamento.php";
-                    break;
-            case "btn1":
-            case "btn2":
-            case "btn3":
-            case "btn4":
-                window.location.href = "carrinho.php";
-                break;
             case "btnentrar":
                 window.location.href = "login.php";
                 break;
             case "btnCadastrar":
-                window.location.href = "cadastro.php"; // URL correta
+                window.location.href = "cadastro.php";
                 break;
             case "btnCarrinho":
                 document.getElementById('cart-sidebar').style.display = 'block';
@@ -61,16 +51,16 @@ document.addEventListener("DOMContentLoaded", function() {
             case "ofertas-dallas":
                 window.location.href = "dallasclub2.php";
                 break;
-            case "btnvoltar":
+            case "btnvoltar": // Alterei para "btnvoltar" para corresponder ao ID correto
                 document.getElementById('cart-sidebar').style.display = 'none'; // Fecha o carrinho
-                break;
+                break;    
             default:
                 console.log("ID não reconhecido: " + id);
                 break;
         }
     }
 
-    // Função para adicionar ouvinte de clique
+    // Função para adicionar ouvintes de clique
     function addClickListener(elementId, redirectId) {
         const element = document.getElementById(elementId);
         if (element) {
@@ -82,8 +72,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Adiciona ouvintes de clique
-    addClickListener("btnfinalizar", "btnfinalizar");
     addClickListener("racoes-cachorro", "racoes-cachorro");
     addClickListener("btnentrar", "btnentrar");
     addClickListener("btnCadastrar", "btnCadastrar");
@@ -100,11 +88,55 @@ document.addEventListener("DOMContentLoaded", function() {
     addClickListener("acessorios-passaro", "acessorios-passaro");
     addClickListener("conheca-dallas", "conheca-dallas");
     addClickListener("ofertas-dallas", "ofertas-dallas");
-    addClickListener("btnvoltar", "btnvoltar");
 
-    // Adiciona ouvintes de clique para os botões de adicionar ao carrinho
-    addClickListener("btn1", "btn1");
-    addClickListener("btn2", "btn2");
-    addClickListener("btn3", "btn3");
-    addClickListener("btn4", "btn4");
+    // Adiciona ouvinte de evento para abrir o carrinho
+    const btnCarrinho = document.getElementById('btnCarrinho');
+    if (btnCarrinho) {
+        btnCarrinho.addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById('cart-sidebar').style.display = 'block';
+        });
+    }
+
+    // Adiciona ouvinte de evento para fechar o carrinho
+    const btnVoltar = document.getElementById('btnvoltar');
+    if (btnVoltar) {
+        btnVoltar.addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById('cart-sidebar').style.display = 'none';
+        });
+    }
+        // Event listener para o botão "Finalizar Compra"
+    document.getElementById("finalizarCompra").addEventListener("click", function() {
+        window.location.href = 'pagamento.php'; 
+    });
+
+// Recupera os dados do usuário do localStorage, se houver
+const user = JSON.parse(localStorage.getItem('user'));
+console.log("Usuário recuperado:", user); // Log para verificação
+
+// Verifica se o usuário está logado e atualiza a interface
+if (user && user.username) {
+    console.log("Usuário logado:", user.username); // Log para verificação
+
+    // Esconder botões de login e cadastro
+    document.getElementById('btnentrar').style.display = 'none';
+    document.getElementById('btnCadastrar').style.display = 'none';
+
+    // Mostrar nome de usuário
+    const userInfo = document.getElementById('user-info');
+    userInfo.textContent = `Bem-vindo, ${user.username}`;
+    userInfo.style.display = 'inline';
+
+    // Mostrar botão de logout
+    const btnLogout = document.getElementById('btnLogout');
+    btnLogout.style.display = 'inline'; // Garanta que o botão esteja visível
+    btnLogout.addEventListener('click', function() {
+        console.log("Botão de logout clicado"); // Log para verificação
+        localStorage.removeItem('user');
+        window.location.reload(); // Recarregar a página após logout
+    });
+} else {
+    console.log("Nenhum usuário logado"); // Log para verificação
+}
 });

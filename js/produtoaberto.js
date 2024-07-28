@@ -14,7 +14,7 @@ function redirectToPage(id) {
             document.getElementById('cart-sidebar').style.display = 'block';
             break;
         case "addToCartBtn":
-            window.location.href = "pagamento.php";
+            window.location.href = "outra_pagina.php";
             break;
         case "finalizarCompra":
             window.location.href = "pagamento.php";
@@ -57,16 +57,7 @@ const productImages = document.querySelectorAll('.product-card img');
 // Adicionando event listener a cada imagem
 productImages.forEach(image => {
     image.addEventListener('click', function() {
-        window.location.href = 'carrinho.php';
+        // Aqui você pode definir a página para a qual deseja redirecionar
+        window.location.href = 'carrinho.html';
     });
 });
-const addToCartBtn = document.getElementById('addToCartBtn');
-if (addToCartBtn) {
-    console.log("Botão 'addToCartBtn' encontrado.");
-    addToCartBtn.addEventListener("click", function() {
-        console.log("Botão 'addToCartBtn' clicado.");
-        window.location.href = "pagamento.php";
-    });
-} else {
-    console.log("Botão 'addToCartBtn' não encontrado.");
-}
