@@ -1,3 +1,43 @@
+<?php
+// Conectar ao banco de dados
+$servername = "localhost";
+$username = "root";
+$password = "usbw";
+$dbname = "dallas_pet";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar a conexão
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+$conn->set_charset("utf8mb4");
+
+// Definir a categoria e subcategoria de produtos
+$categoria = 'Cachorro'; // Categoria específica para rações de cachorro
+$subcategoria = 'rações'; // Exemplo de subcategoria
+
+$sql = "SELECT codigo_produto, nome_produto, preco_produto, nota_produto, imagem_produto 
+        FROM produto 
+        WHERE categoria_produto = ? AND subcategoria_produto = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param('ss', $categoria, $subcategoria);
+$stmt->execute();
+$result = $stmt->get_result();
+
+$produtos = array();
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $produtos[] = $row;
+    }
+}
+
+$stmt->close();
+$conn->close();
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -16,10 +56,12 @@
             <button>Pesquisar</button>
         </div>
         <div class="user-actions">
-            <button id="btncarrinho">🛒</button>
-            <button id="btnentrar">Entrar</button>
-            <button id="btncadastrar">Cadastrar-se</button>
-        </div>
+        <span id="user-info" style="display: none;"></span>
+                <button type="button" id="btnLogout" class="button" style="display: none;">Logout</button>
+                <button type="button" id="btnentrar" class="button">Entrar</button>
+                <button type="button" id="btnCadastrar" class="button">Cadastrar</button>
+                <button type="button" id="btnCarrinho" class="button">🛒</button>
+            </div>
     </header>
     <div class="menu">
         <nav>
@@ -89,74 +131,33 @@
             </div>
         </aside>
         <section class="product-list">
-            <h2>Rações para cachorro</h2>
-            <p>A seleção de rações para cachorro da DallasPet tem um papel fundamental no processo de cuidado da saúde do seu animal. É crucial proporcionar ao seu companheiro uma alimentação que ajude nas suas necessidades.</p>
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="img/Capturar.PNG" alt="Ração Golden Special para Cães Adultos Sabor Frango e Carne">
-                    <p>R$ 180,00</p>
-                    <p>ou 2x de R$ 90,00 sem juros</p>
-                    <p>Descrição do produto</p>
-                    <p>Frete grátis para todo o Brasil</p>
-                    <p>Imagens meramente ilustrativas</p>
-                </div>
-                <div class="product-card">
-                    <img src="img/Capturar.PNG" alt="Ração Golden Special para Cães Adultos Sabor Frango e Carne">
-                    <p>R$ 180,00</p>
-                    <p>ou 2x de R$ 90,00 sem juros</p>
-                    <p>Descrição do produto</p>
-                    <p>Frete grátis para todo o Brasil</p>
-                    <p>Imagens meramente ilustrativas</p>
-                </div>
-                <div class="product-card">
-                    <img src="img/Capturar.PNG" alt="Ração Golden Special para Cães Adultos Sabor Frango e Carne">
-                    <p>R$ 180,00</p>
-                    <p>ou 2x de R$ 90,00 sem juros</p>
-                    <p>Descrição do produto</p>
-                    <p>Frete grátis para todo o Brasil</p>
-                    <p>Imagens meramente ilustrativas</p>
-                </div>
-                <div class="product-card">
-                    <img src="img/Capturar.PNG" alt="Ração Golden Special para Cães Adultos Sabor Frango e Carne">
-                    <p>R$ 180,00</p>
-                    <p>ou 2x de R$ 90,00 sem juros</p>
-                    <p>Descrição do produto</p>
-                    <p>Frete grátis para todo o Brasil</p>
-                    <p>Imagens meramente ilustrativas</p>
-                </div>
-                <div class="product-card">
-                    <img src="img/Capturar.PNG" alt="Ração Golden Special para Cães Adultos Sabor Frango e Carne">
-                    <p>R$ 180,00</p>
-                    <p>ou 2x de R$ 90,00 sem juros</p>
-                    <p>Descrição do produto</p>
-                    <p>Frete grátis para todo o Brasil</p>
-                    <p>Imagens meramente ilustrativas</p>
-                </div>
-                <div class="product-card">
-                    <img src="img/Capturar.PNG" alt="Ração Golden Special para Cães Adultos Sabor Frango e Carne">
-                    <p>R$ 180,00</p>
-                    <p>ou 2x de R$ 90,00 sem juros</p>
-                    <p>Descrição do produto</p>
-                    <p>Frete grátis para todo o Brasil</p>
-                    <p>Imagens meramente ilustrativas</p>
-                </div>
+    <h2>Rações para cachorro</h2>
+    <p>A seleção de rações para cachorro da DallasPet tem um papel fundamental no processo de cuidado da saúde do seu animal. É crucial proporcionar ao seu companheiro uma alimentação que ajude nas suas necessidades.</p>
+    <div class="product-grid">
+        <?php foreach ($produtos as $produto): ?>
+            <div class="product-card">
+                <img src="<?php echo htmlspecialchars($produto['imagem_produto']); ?>" alt="<?php echo htmlspecialchars($produto['nome_produto']); ?>">
+                <p><?php echo htmlspecialchars($produto['nome_produto']); ?></p>
+                <p>R$ <?php echo number_format($produto['preco_produto'], 2, ',', '.'); ?></p>
+                <p>Nota: <?php echo number_format($produto['nota_produto'], 1, ',', '.'); ?></p>
+                <button class="btn-add-to-cart" 
+                        data-product-id="<?php echo $produto['codigo_produto']; ?>"
+                        data-product-name="<?php echo htmlspecialchars($produto['nome_produto']); ?>"
+                        data-product-price="<?php echo $produto['preco_produto']; ?>"
+                        data-product-image="<?php echo htmlspecialchars($produto['imagem_produto']); ?>">Adicionar ao Carrinho</button>
             </div>
-        </section>
+        <?php endforeach; ?>
+    </div>
+</section>
+
     </main>
     <aside id="cart-sidebar" class="cart-sidebar">
         <h2>Carrinho</h2>
-        <div class="cart-item">
-            <img src="img/Capturar.PNG" alt="Ração Golden Special">
-            <div class="cart-item-info">
-                <p>Ração Golden Special para Cães Adultos Sabor Frango e Carne</p>
-                <p>R$ 180,00</p>
-                <input type="number" value="1" min="1">
-            </div>
-        </div>
+        <div id="cart-items" class="cart-items-container"></div>
         <div class="cart-summary">
-            <p>SUBTOTAL : <span id="subtotal">R$ 180,00</span></p>
+            <p>SUBTOTAL : <span id="subtotal">R$ 0,00</span></p>
             <button id="finalizarCompra" class="finalizar-compra">Finalizar Compra</button>
-            <button id="voltar" class="voltar">Voltar</button>
+            <button id="btnvoltar" class="voltar">Voltar</button>
         </div>
     </aside>
     <footer class="fundo">

@@ -37,11 +37,10 @@
   </div>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("dallas2").addEventListener("click", function() {
-                window.location.href = "dallasclub2.php";
-            });
-            
-            });
+        document.getElementById("dallas2").addEventListener("click", function() {
+            window.location.href = "dallasclub2.html";
+        });
+      });
         </script>
 </body>
 </html>
