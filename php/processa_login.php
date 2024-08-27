@@ -10,8 +10,8 @@ function verifyPassword($senhaFornecida, $senhaHash) {
 // Verificar se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Receber dados do formulário
-    $email = isset($_POST['email']) ? $_POST['email'] : '';
-    $senha = isset($_POST['senha']) ? $_POST['senha'] : '';
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
     // Sanitize email para evitar SQL Injection
     $email = $conn->real_escape_string($email);
@@ -20,10 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "SELECT * FROM usuarios WHERE email_usuario = '$email'";
     $result = $conn->query($sql);
 
-    if (!$result) {
-        // Erro na execução da consulta
-        $response = array("status" => "error", "message" => "Erro na consulta SQL: " . $conn->error);
-    } elseif ($result->num_rows == 1) {
+    if ($result->num_rows == 1) {
         // Usuário encontrado, verificar senha
         $row = $result->fetch_assoc();
         $senhaHash = $row['senha_usuario'];
