@@ -10,7 +10,9 @@
 <body>
   <header>
     <div class="logo-container">
-        <img src="img/logodallaspet.PNG" alt="DallasPet Logo" class="logo">
+        <a href="index.php">
+          <img src="img/logodallaspet.PNG" alt="DallasPet Logo" class="logo">
+        </a>
     </div>
     <span class="ambiente-seguro">
         <img src="img/ambiente seguro.PNG" alt="Ambiente Seguro" class="icon">

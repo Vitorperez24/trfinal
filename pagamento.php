@@ -42,15 +42,14 @@
         <section class="form-container-right">
             <h2>Método de Pagamento</h2>
             <p>Selecione o método de pagamento:</p>
-            <button onclick="realizarPagamentoPix()">Pagar com Pix</button>
+            <button id="pagarPix">Pagar com Pix</button>
         </section>
     </div>
-
     <script>
-        function realizarPagamentoPix() {
-            // Coloque aqui o código para realizar o pagamento via Pix
-            alert("Você selecionou pagar com Pix. Em breve será redirecionado.");
-        }
-    </script>
-</body>
+    document.getElementById('pagarPix').addEventListener('click', function() {
+            window.location.href = 'https://nubank.com.br/cobrar/7tcca/66ce37f3-ed18-4c51-8d87-22da07c23d1a';
+        });
+        </script>
+        
+
 </html>

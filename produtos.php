@@ -1,28 +1,19 @@
 <?php
-$servername = "localhost";
-$username = "root";  // Substitua pelo seu nome de usuário do banco de dados
-$password = "usbw";  // Substitua pela sua senha do banco de dados
-$dbname = "dallas_pet";
+include 'config.php'; // Inclua o arquivo de configuração do banco de dados
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Consulta SQL para buscar todos os produtos
+$sql = "SELECT * FROM produtos";
+$result = mysqli_query($conn, $sql);
 
-// Verificar a conexão
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// Array para armazenar os produtos
+$produtos = [];
 
-$sql = "SELECT codigo_produto, nome_produto, preco_produto, nota_produto FROM produto";
-$result = $conn->query($sql);
-
-$produtos = array();
-
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
+if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
         $produtos[] = $row;
     }
 }
 
-$conn->close();
-
+// Retorna os produtos como JSON
 echo json_encode($produtos);
 ?>

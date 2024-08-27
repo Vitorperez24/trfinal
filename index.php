@@ -42,10 +42,12 @@ $conn->close();
 </head>
 <body>
     <header>
-        <div class="logo">
+    <div class="logo">
+        <a href="index.php">
             <img src="img/logodallaspet.PNG" alt="Logo do PetShop Marketplace">
-            <h1></h1>
-        </div>
+        </a>
+        <h1></h1>
+    </div>
         <nav>
             <div class="pesquisa">
                 <input type="text" placeholder="Pesquisar...">
@@ -106,19 +108,33 @@ $conn->close();
     <h3 class="textmarca">Marcas Mais bem avaliadas</h3>
     
     <div class="venda">
-        <?php foreach ($produtos as $produto): ?>
-            <div class="produto">
-                <img src="<?php echo htmlspecialchars($produto['imagem_produto']); ?>" alt="<?php echo htmlspecialchars($produto['nome_produto']); ?>">
-                <h3><?php echo htmlspecialchars($produto['nome_produto']); ?></h3>
-                <p>R$ <?php echo number_format($produto['preco_produto'], 2, ',', '.'); ?></p>
-                <button class="btn-add-to-cart" 
-                        data-product-id="<?php echo $produto['codigo_produto']; ?>"
-                        data-product-name="<?php echo htmlspecialchars($produto['nome_produto']); ?>"
-                        data-product-price="<?php echo $produto['preco_produto']; ?>"
-                        data-product-image="<?php echo htmlspecialchars($produto['imagem_produto']); ?>">Adicionar ao Carrinho</button>
-            </div>
-        <?php endforeach; ?>
+    <?php foreach ($produtos as $produto): ?>
+        <div class="produto">
+            <!-- Link na imagem do produto -->
+            <a href="produtoaberto.php?codigo_produto=<?php echo $produto['codigo_produto']; ?>">
+                <div class="produto-imagem">
+                    <img src="<?php echo htmlspecialchars($produto['imagem_produto']); ?>" alt="<?php echo htmlspecialchars($produto['nome_produto']); ?>">
+                </div>
+            </a>
+            
+            <!-- Link no nome do produto -->
+            <h3>
+                <a href="produtoaberto.php?codigo_produto=<?php echo $produto['codigo_produto']; ?>">
+                    <?php echo htmlspecialchars($produto['nome_produto']); ?>
+                </a>
+            </h3>
+            
+            <p>R$ <?php echo number_format($produto['preco_produto'], 2, ',', '.'); ?></p>
+            <button class="btn-add-to-cart" 
+                    data-product-id="<?php echo $produto['codigo_produto']; ?>"
+                    data-product-name="<?php echo htmlspecialchars($produto['nome_produto']); ?>"
+                    data-product-price="<?php echo $produto['preco_produto']; ?>"
+                    data-product-image="<?php echo htmlspecialchars($produto['imagem_produto']); ?>">Adicionar ao Carrinho</button>
+        </div>
+    <?php endforeach; ?>
     </div>
+
+
 
     <aside id="cart-sidebar" class="cart-sidebar">
         <h2>Carrinho</h2>

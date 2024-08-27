@@ -46,10 +46,12 @@ $conn->close();
 </head>
 <body>
 <header>
-        <div class="logo">
+<div class="logo">
+        <a href="index.php">
             <img src="img/logodallaspet.PNG" alt="Logo do PetShop Marketplace">
-            <h1></h1>
-        </div>
+        </a>
+        <h1></h1>
+    </div>
         <nav>
             <div class="pesquisa">
                 <input type="text" placeholder="Pesquisar...">
@@ -134,20 +136,31 @@ $conn->close();
         <section class="product-list">
             <h2>Gaiolas para Passaro</h2>
             <p>A seleção de rações para cachorro da DallasPet tem um papel fundamental no processo de cuidado da saúde do seu animal. É crucial proporcionar ao seu companheiro uma alimentação que ajude nas suas necessidades.</p>
-            <div class="product-grid">
-        <?php foreach ($produtos as $produto): ?>
-            <div class="product-card">
-                <img src="<?php echo htmlspecialchars($produto['imagem_produto']); ?>" alt="<?php echo htmlspecialchars($produto['nome_produto']); ?>">
-                <p><?php echo htmlspecialchars($produto['nome_produto']); ?></p>
-                <p>R$ <?php echo number_format($produto['preco_produto'], 2, ',', '.'); ?></p>
-                <p>Nota: <?php echo number_format($produto['nota_produto'], 1, ',', '.'); ?></p>
-                <button class="btn-add-to-cart" 
-                        data-product-id="<?php echo $produto['codigo_produto']; ?>"
-                        data-product-name="<?php echo htmlspecialchars($produto['nome_produto']); ?>"
-                        data-product-price="<?php echo $produto['preco_produto']; ?>"
-                        data-product-image="<?php echo htmlspecialchars($produto['imagem_produto']); ?>">Adicionar ao Carrinho</button>
-            </div>
-        <?php endforeach; ?>
+            <div class="venda">
+    <?php foreach ($produtos as $produto): ?>
+        <div class="produto">
+            <!-- Link na imagem do produto -->
+            <a href="produtoaberto.php?codigo_produto=<?php echo $produto['codigo_produto']; ?>">
+                <div class="produto-imagem">
+                    <img src="<?php echo htmlspecialchars($produto['imagem_produto']); ?>" alt="<?php echo htmlspecialchars($produto['nome_produto']); ?>">
+                </div>
+            </a>
+            
+            <!-- Link no nome do produto -->
+            <h3>
+                <a href="produtoaberto.php?codigo_produto=<?php echo $produto['codigo_produto']; ?>">
+                    <?php echo htmlspecialchars($produto['nome_produto']); ?>
+                </a>
+            </h3>
+            
+            <p>R$ <?php echo number_format($produto['preco_produto'], 2, ',', '.'); ?></p>
+            <button class="btn-add-to-cart" 
+                    data-product-id="<?php echo $produto['codigo_produto']; ?>"
+                    data-product-name="<?php echo htmlspecialchars($produto['nome_produto']); ?>"
+                    data-product-price="<?php echo $produto['preco_produto']; ?>"
+                    data-product-image="<?php echo htmlspecialchars($produto['imagem_produto']); ?>">Adicionar ao Carrinho</button>
+        </div>
+    <?php endforeach; ?>
     </div>
 </section>
 
