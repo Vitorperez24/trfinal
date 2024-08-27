@@ -1,66 +1,38 @@
 document.addEventListener("DOMContentLoaded", function() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Função para redirecionar
     function redirectToPage(id) {
-        switch (id) {
-            case "racoes-cachorro":
-                window.location.href = "crracoes.php";
-                break;
-            case "btnentrar":
-                window.location.href = "login.php";
-                break;
-            case "btnCadastrar":
-                window.location.href = "cadastro.php";
-                break;
-            case "btnCarrinho":
-                document.getElementById('cart-sidebar').style.display = 'block';
-                break;
-            case "petiscos-cachorro":
-                window.location.href = "crpetisos.php";
-                break;
-            case "farmacia-cachorro":
-                window.location.href = "crfarma.php";
-                break;
-            case "coleiras-cachorro":
-                window.location.href = "crcoleira.php";
-                break;
-            case "racoes-gato":
-                window.location.href = "gtracoes.php";
-                break;
-            case "petiscos-gato":
-                window.location.href = "gtpetiosos.php";
-                break;
-            case "farmacia-gato":
-                window.location.href = "gtfarma.php";
-                break;
-            case "coleiras-gato":
-                window.location.href = "gtcoleira.php";
-                break;
-            case "racoes-passaro":
-                window.location.href = "pasracoes.php";
-                break;
-            case "gaiolas-passaro":
-                window.location.href = "pasgaio.php";
-                break;
-            case "acessorios-passaro":
-                window.location.href = "pasace.php";
-                break;
-            case "conheca-dallas":
-                window.location.href = "dallasclub.php";
-                break;
-            case "ofertas-dallas":
-                window.location.href = "dallasclub2.php";
-                break;
-            case "btnvoltar": // Alterei para "btnvoltar" para corresponder ao ID correto
-                document.getElementById('cart-sidebar').style.display = 'none'; // Fecha o carrinho
-                break;    
-            default:
-                console.log("ID não reconhecido: " + id);
-                break;
+        const pageMap = {
+            "racoes-cachorro": "crracoes.php",
+            "btnentrar": "login.php",
+            "btnCadastrar": "cadastro.php",
+            "btnCarrinho": "cart",
+            "petiscos-cachorro": "crpetisos.php",
+            "farmacia-cachorro": "crfarma.php",
+            "coleiras-cachorro": "crcoleira.php",
+            "racoes-gato": "gtracoes.php",
+            "petiscos-gato": "gtpetiosos.php",
+            "farmacia-gato": "gtfarma.php",
+            "coleiras-gato": "gtcoleira.php",
+            "racoes-passaro": "pasracoes.php",
+            "gaiolas-passaro": "pasgaio.php",
+            "acessorios-passaro": "pasace.php",
+            "conheca-dallas": "dallasclub.php",
+            "ofertas-dallas": "dallasclub2.php",
+            "btnvoltar": "close-cart"
+        };
+
+        if (pageMap[id] === "cart") {
+            document.getElementById('cart-sidebar').style.display = 'block';
+        } else if (pageMap[id] === "close-cart") {
+            document.getElementById('cart-sidebar').style.display = 'none';
+        } else if (pageMap[id]) {
+            window.location.href = pageMap[id];
+        } else {
+            console.log(`ID não reconhecido: ${id}`);
         }
     }
 
-    // Função para adicionar ouvintes de clique
     function addClickListener(elementId, redirectId) {
         const element = document.getElementById(elementId);
         if (element) {
@@ -88,55 +60,156 @@ document.addEventListener("DOMContentLoaded", function() {
     addClickListener("acessorios-passaro", "acessorios-passaro");
     addClickListener("conheca-dallas", "conheca-dallas");
     addClickListener("ofertas-dallas", "ofertas-dallas");
+    addClickListener("btnvoltar", "btnvoltar");
 
-    // Adiciona ouvinte de evento para abrir o carrinho
-    const btnCarrinho = document.getElementById('btnCarrinho');
-    if (btnCarrinho) {
-        btnCarrinho.addEventListener("click", function(event) {
-            event.preventDefault();
-            document.getElementById('cart-sidebar').style.display = 'block';
+    function updateCartSidebar() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        cartItemsContainer.innerHTML = ''; // Limpar carrinho atual
+        let subtotal = 0;
+
+        cart.forEach((item, index) => {
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('cart-item');
+
+            const itemContent = `
+                <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px; margin-right: 10px;">
+                <div style="display: flex; flex-direction: column; flex-grow: 1;">
+                    <p style="font-size: 14px; margin: 5px 0;">${item.name}</p>
+                    <p style="font-size: 14px; margin: 5px 0;">R$ ${item.price ? item.price.toFixed(2) : '0.00'}</p>
+                    <p style="font-size: 14px; margin: 5px 0;">Quantidade: ${item.quantity}</p>
+                </div>
+                <button class="remove-from-cart" data-index="${index}" style="background-color: #FF0000; color: white; border: none; cursor: pointer; padding: 5px 10px; border-radius: 5px; transition: background-color 0.3s; margin-left: 10px;">Remover</button>
+            `;
+            cartItem.innerHTML = itemContent;
+            cartItemsContainer.appendChild(cartItem);
+
+            if (item.price) {
+                subtotal += item.price * item.quantity;
+            }
+        });
+
+        document.getElementById('subtotal').textContent = `R$ ${subtotal.toFixed(2)}`;
+
+        const removeButtons = document.querySelectorAll('.remove-from-cart');
+        removeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const index = this.dataset.index;
+                cart.splice(index, 1);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartSidebar();
+            });
         });
     }
 
-    // Adiciona ouvinte de evento para fechar o carrinho
-    const btnVoltar = document.getElementById('btnvoltar');
-    if (btnVoltar) {
-        btnVoltar.addEventListener("click", function(event) {
-            event.preventDefault();
-            document.getElementById('cart-sidebar').style.display = 'none';
+    updateCartSidebar();
+
+    document.querySelectorAll('.btn-add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = this.dataset.productId;
+            const productName = this.dataset.productName;
+            const productPrice = parseFloat(this.dataset.productPrice);
+            const productImage = this.dataset.productImage;
+
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({
+                    id: productId,
+                    name: productName,
+                    price: productPrice,
+                    image: productImage,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartSidebar();
         });
-    }
-        // Event listener para o botão "Finalizar Compra"
-    document.getElementById("finalizarCompra").addEventListener("click", function() {
-        window.location.href = 'pagamento.php'; 
     });
 
-// Recupera os dados do usuário do localStorage, se houver
-const user = JSON.parse(localStorage.getItem('user'));
-console.log("Usuário recuperado:", user); // Log para verificação
+    document.getElementById('finalizarCompra').addEventListener('click', function() {
+        // Coleta o subtotal do localStorage
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        var subtotal = cart.reduce(function(total, item) {
+            return total + (item.price * item.quantity);
+        }, 0);
+    
+        // Coleta o e-mail do localStorage
+        var email = localStorage.getItem('email');
+    
+        // Redireciona para pagamento.php com o subtotal e o e-mail
+        var form = document.createElement('form');
+        form.method = 'POST';
+        form.action = 'pagamento.php';
+    
+        var subtotalInput = document.createElement('input');
+        subtotalInput.type = 'hidden';
+        subtotalInput.name = 'subtotal';
+        subtotalInput.value = subtotal;
+        form.appendChild(subtotalInput);
+    
+        var emailInput = document.createElement('input');
+        emailInput.type = 'hidden';
+        emailInput.name = 'email';
+        emailInput.value = email;
+        form.appendChild(emailInput);
+    
+        document.body.appendChild(form);
+        form.submit();
+    
+        // Remove o carrinho do localStorage
+        localStorage.removeItem('cart');
+    
+        // Atualiza o carrinho na barra lateral
+        updateCartSidebar();
+    });
+    
+    
 
-// Verifica se o usuário está logado e atualiza a interface
-if (user && user.username) {
-    console.log("Usuário logado:", user.username); // Log para verificação
-
-    // Esconder botões de login e cadastro
-    document.getElementById('btnentrar').style.display = 'none';
-    document.getElementById('btnCadastrar').style.display = 'none';
-
-    // Mostrar nome de usuário
     const userInfo = document.getElementById('user-info');
-    userInfo.textContent = `Bem-vindo, ${user.username}`;
-    userInfo.style.display = 'inline';
-
-    // Mostrar botão de logout
     const btnLogout = document.getElementById('btnLogout');
-    btnLogout.style.display = 'inline'; // Garanta que o botão esteja visível
+    const username = localStorage.getItem('username');
+    const email = localStorage.getItem('email');
+
+    if (username && email) {
+        userInfo.textContent = `Olá, ${username} (${email})`;
+        userInfo.style.display = 'inline';
+        btnLogout.style.display = 'inline';
+        document.getElementById('btnentrar').style.display = 'none';
+        document.getElementById('btnCadastrar').style.display = 'none';
+    }
+
     btnLogout.addEventListener('click', function() {
-        console.log("Botão de logout clicado"); // Log para verificação
-        localStorage.removeItem('user');
-        window.location.reload(); // Recarregar a página após logout
+        localStorage.removeItem('username');
+        localStorage.removeItem('email');
+        window.location.reload();
     });
-} else {
-    console.log("Nenhum usuário logado"); // Log para verificação
-}
+
+    // Recupera os dados do usuário do localStorage, se houver
+    const user = JSON.parse(localStorage.getItem('user'));
+    console.log("Usuário recuperado:", user);
+
+    // Verifica se o usuário está logado e atualiza a interface
+    if (user && user.username) {
+        console.log("Usuário logado:", user.username);
+
+        document.getElementById('btnentrar').style.display = 'none';
+        document.getElementById('btnCadastrar').style.display = 'none';
+
+        const userInfo = document.getElementById('user-info');
+        userInfo.textContent = `Bem-vindo, ${user.username}`;
+        userInfo.style.display = 'inline';
+
+        const btnLogout = document.getElementById('btnLogout');
+        btnLogout.style.display = 'inline';
+        btnLogout.addEventListener('click', function() {
+            console.log("Botão de logout clicado");
+            localStorage.removeItem('user');
+            window.location.reload();
+        });
+    } else {
+        console.log("Nenhum usuário logado");
+    }
 });
